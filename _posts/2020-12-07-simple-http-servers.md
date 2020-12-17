@@ -26,6 +26,9 @@ Everyone knows these great commands for starting HTTP servers for the second ver
 local@server:~$ python -m SimpleHTTPServer [port]
 ```
 
+Also this:
+<https://gist.github.com/tnory56/1e734b74c2cf64d9d9e86c36280bc4ad>
+
 And its analog for Python 3:
 
 ```text
