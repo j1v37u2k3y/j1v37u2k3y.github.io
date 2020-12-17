@@ -31,17 +31,6 @@ layout: default
   </header>
   <div itemprop="articleBody" id="content">
     {% if page.toc == true %}
-    <!--<p>
-      <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-         aria-controls="collapseExample">
-        Show table of contents
-      </a>
-    </p>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body bg-dark">
-        {{ content | toc_only }}
-      </div>
-    </div>-->
     {{ content | inject_anchors }}
     {% else %}
     {{ content }}
