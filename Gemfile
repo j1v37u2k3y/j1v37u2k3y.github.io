@@ -4,11 +4,14 @@ source "https://rubygems.org"
 
 group :jekyll_plugins do
   gem "github-pages"
-  gem "jekyll-feed"
   gem "jekyll-sitemap"
-  gem "jekyll-seo-tag"
   gem "jemoji"
-  #gem 'jekyll-toc', '~> 0.14.0'
+  gem "jekyll", ">= 3.5", "< 5.0"
+  gem "jekyll-feed", "~> 0.9"
+  gem "jekyll-seo-tag", "~> 2.1"
+  gem "jekyll-paginate", "~> 1.1"
+  gem "jekyll-redirect-from", "~> 0.12"
+  gem "jekyll-toc"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
