@@ -14,6 +14,7 @@ DevGuru is a fictional web development company hiring you for a pentest assessme
 OSCP like ~ Real life based
 
 Difficulty: Intermediate (Depends on experience)
+
 <!--cut-->
 
 # NMAP
