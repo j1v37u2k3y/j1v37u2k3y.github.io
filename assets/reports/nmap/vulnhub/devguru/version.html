@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" type="text/css" integrity="sha384-VEpVDzPR2x8NbTDZ8NFW4AWbtT2g/ollEzX/daZdW/YvUBlbgVtsxMftnJ84k0Cn" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" integrity="sha384-rgWRqC0OFPisxlUvl332tiM/qmaNxnlY46eksSZD84t+s2vZlqGeHrncwIRX7CGp" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" integrity="sha384-7PXRkl4YJnEpP8uU4ev9652TTZSxrqC8uOpcV1ftVEC7LVyLZqqDUAaq+Y+lGgr9" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><style>
+    .target:before {
+        content: "";
+        display: block;
+        height: 50px;
+        margin: -20px 0 0;
+    }
+    @media only screen and (min-width:1900px) {
+        .container {
+            width: 1800px;
+        }
+    }
+    .footer {
+        margin-top:60px;
+        padding-top:60px;
+        width: 100%;
+        height: 180px;
+        background-color: #f5f5f5;
+    }
+    .clickable {
+        cursor: pointer;
+    }
+    .panel-heading > h3:before {
+        font-family: 'Glyphicons Halflings';
+        content: "\e114"; /* glyphicon-chevron-down */
+        padding-right: 1em;
+    }
+    .panel-heading.collapsed > h3:before {
+        content: "\e080"; /* glyphicon-chevron-right */
+    }
+</style>
+    <title>Scan Report Nmap 7.91</title>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav">
+        <li><a href="#scannedhosts">Scanned Hosts</a></li>
+        <li><a href="#onlinehosts">Online Hosts</a></li>
+        <li><a href="#openservices">Open Services</a></li>
+    </ul></div>
+</div></nav><div class="container">
+    <div class="jumbotron">
+        <h1>Scan Report<br><small>Nmap 7.91</small>
+        </h1>
+        <pre style="white-space:pre-wrap; word-wrap:break-word;">nmap -n -vvv -sS -sV -sC -p- -oA nmap/version --stylesheet https://jiveturkey.rocks/assets/reports/nmap/nmap-bootstrap.xsl 192.168.9.131</pre>
+        <p class="lead">Tue Dec  8 11:53:59 2020 – Tue Dec  8 11:55:38 2020<br>1 hosts scanned.
+            1 hosts up.
+            0 hosts down.
+        </p>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width:100%;">1<span class="sr-only"></span>
+            </div>
+            <div class="progress-bar progress-bar-danger" style="width:0%;">0<span class="sr-only"></span>
+            </div>
+        </div>
+    </div>
+    <h2 id="scannedhosts" class="target">Scanned Hosts</h2>
+    <div class="table-responsive"><table id="table-overview" class="table table-striped dataTable" role="grid">
+        <thead><tr>
+            <th>State</th>
+            <th>Address</th>
+            <th>Hostname</th>
+            <th>TCP (open)</th>
+            <th>UDP (open)</th>
+        </tr></thead>
+        <tbody><tr>
+            <td><span class="label label-success">up</span></td>
+            <td>192.168.9.131</td>
+            <td></td>
+            <td>3</td>
+            <td>0</td>
+        </tr></tbody>
+    </table></div>
+    <script>
+        $(document).ready(function() {
+            $('#table-overview').DataTable();
+        });
+    </script><h2 id="onlinehosts" class="target">Online Hosts</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading clickable" data-toggle="collapse" data-target="#192-168-9-131"><h3 class="panel-title">192.168.9.131</h3></div>
+        <div class="panel-body collapse in" id="192-168-9-131">
+            <h4>Ports</h4>
+            <div class="table-responsive"><table class="table table-bordered">
+                <thead><tr>
+                    <th>Port</th>
+                    <th>Protocol</th>
+                    <th>State<br>Reason</th>
+                    <th>Service</th>
+                    <th>Product</th>
+                    <th>Version</th>
+                    <th>Extra Info</th>
+                </tr></thead>
+                <tbody>
+                <tr class="success">
+                    <td title="Port">22</td>
+                    <td title="Protocol">tcp</td>
+                    <td title="State / Reason">open<br>syn-ack</td>
+                    <td title="Service">ssh</td>
+                    <td title="Product">OpenSSH</td>
+                    <td title="Version">7.6p1 Ubuntu 4</td>
+                    <td title="Extra Info">Ubuntu Linux; protocol 2.0</td>
+                </tr>
+                <tr><td colspan="7">
+                    <a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:openbsd:openssh:7.6p1">cpe:/a:openbsd:openssh:7.6p1</a><h5>ssh-hostkey</h5>
+                    <pre style="white-space:pre-wrap; word-wrap:break-word;">
+  2048 2a:46:e8:2b:01:ff:57:58:7a:5f:25:a4:d6:f2:89:8e (RSA)
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+lft/kQdC+3L4qMerPmpboe5GOrB60x+QU0R7hjmxY+9bNqST//1+Oa7ycVotqdlk4EtxgnqE2B4mRTNb16mITv/Y8UfsCqYAuy3C8lV9HzG6zgsXgnAhvpMmY31fZqz+dKamnp1W1o+scbnzRNqr/fE1+Yz7Fcu4JvAJ/4NLQS9CHmZh+N12OyF8eVOQmjPeRVHR8BiptinM+EXis4xpOQiuZoEBPkyqhXcBW65CAXlkjuuJ6KpJ7Y3Gbse38L6LKGFs8Hl5k1jbuTxDg8CT+rzzy6on8niDDfcVwHTvZ1JqlUpzjaGifDD8gV60ebRa5/36ORI+ed6G9v1HOW3r
+  256 08:79:93:9c:e3:b4:a4:be:80:ad:61:9d:d3:88:d2:84 (ECDSA)
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNQzBnXE0Ezf7XOzh2KxdMAetOtoTEmfiCh2OSwjnIpAzd1osDr7UsuNt/5m45OgfWVAcVnu3ECEuQZ03P4VxkU=
+  256 9c:f9:88:d4:33:77:06:4e:d9:7c:39:17:3e:07:9c:bd (ED25519)
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINjsvy3HYYZxlENx0Fmval1Ax8ApGBKu6wf5sjK8xuv2</pre>
+                </td></tr>
+                <tr class="success">
+                    <td title="Port">80</td>
+                    <td title="Protocol">tcp</td>
+                    <td title="State / Reason">open<br>syn-ack</td>
+                    <td title="Service">http</td>
+                    <td title="Product">Apache httpd</td>
+                    <td title="Version">2.4.29</td>
+                    <td title="Extra Info">(Ubuntu)</td>
+                </tr>
+                <tr><td colspan="7">
+                    <a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:apache:http_server:2.4.29">cpe:/a:apache:http_server:2.4.29</a><h5>http-generator</h5>
+                    <pre style="white-space:pre-wrap; word-wrap:break-word;">DevGuru</pre>
+                    <h5>http-git</h5>
+                    <pre style="white-space:pre-wrap; word-wrap:break-word;">
+  192.168.9.131:80/.git/
+    Git repository found!
+    Repository description: Unnamed repository; edit this file 'description' to name the...
+    Last commit message: first commit
+    Remotes:
+      http://devguru.local:8585/frank/devguru-website.git
+    Project type: PHP application (guessed from .gitignore)
+</pre>
+                    <h5>http-methods</h5>
+                    <pre style="white-space:pre-wrap; word-wrap:break-word;">
+  Supported Methods: GET HEAD POST OPTIONS</pre>
+                    <h5>http-server-header</h5>
+                    <pre style="white-space:pre-wrap; word-wrap:break-word;">Apache/2.4.29 (Ubuntu)</pre>
+                    <h5>http-title</h5>
+                    <pre style="white-space:pre-wrap; word-wrap:break-word;">Corp - DevGuru</pre>
+                </td></tr>
+                <tr class="success">
+                    <td title="Port">8585</td>
+                    <td title="Protocol">tcp</td>
+                    <td title="State / Reason">open<br>syn-ack</td>
+                    <td title="Service">unknown</td>
+                    <td title="Product"></td>
+                    <td title="Version"></td>
+                    <td title="Extra Info"></td>
+                </tr>
+                <tr><td colspan="7">
+                    <a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>fingerprint-strings</h5>
+                    <pre style="white-space:pre-wrap; word-wrap:break-word;">
+  GenericLines:
+    HTTP/1.1 400 Bad Request
+    Content-Type: text/plain; charset=utf-8
+    Connection: close
+    Request
+  GetRequest:
+    HTTP/1.0 200 OK
+    Content-Type: text/html; charset=UTF-8
+    Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647
+    Set-Cookie: i_like_gitea=283a1b4859c6dc18; Path=/; HttpOnly
+    Set-Cookie: _csrf=ev4sxq07HZFUvRR6Ge_h_TviKHc6MTYwNzQ0NjQ1NDY0MjA1MDcxOA; Path=/; Expires=Wed, 09 Dec 2020 16:54:14 GMT; HttpOnly
+    X-Frame-Options: SAMEORIGIN
+    Date: Tue, 08 Dec 2020 16:54:14 GMT
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en-US" class="theme-"&gt;
+    &lt;head data-suburl=""&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta http-equiv="x-ua-compatible" content="ie=edge"&gt;
+    &lt;title&gt; Gitea: Git with a cup of tea &lt;/title&gt;
+    &lt;link rel="manifest" href="/manifest.json" crossorigin="use-credentials"&gt;
+    &lt;meta name="theme-color" content="#6cc644"&gt;
+    &lt;meta name="author" content="Gitea - Git with a cup of tea" /&gt;
+    &lt;meta name="description" content="Gitea (Git with a cup of tea) is a painless
+  HTTPOptions:
+    HTTP/1.0 404 Not Found
+    Content-Type: text/html; charset=UTF-8
+    Set-Cookie: lang=en-US; Path=/; Max-Age=2147483647
+    Set-Cookie: i_like_gitea=92975a992aeee578; Path=/; HttpOnly
+    Set-Cookie: _csrf=TnErHNdXOafHZeATj-9uDdFwF2Y6MTYwNzQ0NjQ1NDcxNDM4NDYwMg; Path=/; Expires=Wed, 09 Dec 2020 16:54:14 GMT; HttpOnly
+    X-Frame-Options: SAMEORIGIN
+    Date: Tue, 08 Dec 2020 16:54:14 GMT
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en-US" class="theme-"&gt;
+    &lt;head data-suburl=""&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta http-equiv="x-ua-compatible" content="ie=edge"&gt;
+    &lt;title&gt;Page Not Found - Gitea: Git with a cup of tea &lt;/title&gt;
+    &lt;link rel="manifest" href="/manifest.json" crossorigin="use-credentials"&gt;
+    &lt;meta name="theme-color" content="#6cc644"&gt;
+    &lt;meta name="author" content="Gitea - Git with a cup of tea" /&gt;
+    &lt;meta name="description" content="Gitea (Git with a c</pre>
+                </td></tr>
+                </tbody>
+            </table></div>
+        </div>
+    </div>
+    <h2 id="openservices" class="target">Open Services</h2>
+    <div class="table-responsive"><table id="table-services" class="table table-striped dataTable" role="grid">
+        <thead><tr>
+            <th>Address</th>
+            <th>Port</th>
+            <th>Protocol</th>
+            <th>Service</th>
+            <th>Product</th>
+            <th>Version</th>
+            <th>CPE</th>
+            <th>Extra info</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+            <td>192.168.9.131</td>
+            <td>22</td>
+            <td>tcp</td>
+            <td>ssh</td>
+            <td>OpenSSH</td>
+            <td>7.6p1 Ubuntu 4</td>
+            <td>cpe:/a:openbsd:openssh:7.6p1</td>
+            <td>Ubuntu Linux; protocol 2.0</td>
+        </tr>
+        <tr>
+            <td>192.168.9.131</td>
+            <td>80</td>
+            <td>tcp</td>
+            <td>http</td>
+            <td>Apache httpd</td>
+            <td>2.4.29</td>
+            <td>cpe:/a:apache:http_server:2.4.29</td>
+            <td>(Ubuntu)</td>
+        </tr>
+        <tr>
+            <td>192.168.9.131</td>
+            <td>8585</td>
+            <td>tcp</td>
+            <td>unknown</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table></div>
+    <script>
+        $(document).ready(function() {
+            $('#table-services').DataTable();
+        });
+    </script>
+</div>
+<footer class="footer"><div class="container"><p class="text-muted">
+    This report was generated with <a href="https://github.com/honze-net/nmap-bootstrap-xsl">Nmap Bootstrap XSL</a>.<br>
+    Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA</a>.<br>
+    Designed and built by Andreas Hontzia (<a href="https://www.twitter.com/honze_net">@honze_net</a>).<br></p></div></footer>
+</body>
+</html>

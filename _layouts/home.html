@@ -1,0 +1,66 @@
+---
+layout: default
+---
+{%- if page.title -%}
+<header class="pt-3 mb-3">
+  {{ content }}
+</header>
+{%- endif -%}
+
+<div id="content">
+
+  {%- if page.title -%}
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {% if site.paginate %}
+  {% assign posts = paginator.posts %}
+  {% else %}
+  {% assign posts = site.posts %}
+  {% endif %}
+
+  {%- if posts.size > 0 -%}
+  {%- if page.list_title -%}
+  <h2 class="post-list-heading">{{ page.list_title }}</h2>
+  {%- endif -%}
+  <ul class="list-unstyled m-0 post-list">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- for page in posts -%}
+    <li class="py-2 post-list-li">
+      <span class="post-meta">{{ page.date | date: date_format }} </span> <span class="post-meta time">• {{ page.content | number_of_words | divided_by:201 }} minutes to read </span>
+      <h3 class="post-list-header">
+        <a href="{{ page.url | relative_url }}">
+          {{ page.title | escape }}
+        </a>
+      </h3>
+      <div class="post-content2">
+        <span class="post-meta text-secondary">Tags:{%- include taglist.html -%}</span>
+        <span class="post-meta text-secondary float-right">Category:{%- include categorylist.html -%}</span>
+        {%- if site.show_excerpts -%}
+        {{ page.excerpt }}
+        {%- endif -%}
+      </div>
+    </li>
+    {%- endfor -%}
+  </ul>
+
+  {% if site.paginate %}
+  <nav class="py-1" aria-label="Blog page navigation">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Previous</a>
+    {% endif %}
+
+    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+
+  {%- endif -%}
+
+  {% if site.plugins contains "jekyll-feed" %}
+  <a href="{{ '/feed.xml' | relative_url }}"><div id="rss-icon" class="mb-2"></div></a>
+  {% endif %}
+</div>

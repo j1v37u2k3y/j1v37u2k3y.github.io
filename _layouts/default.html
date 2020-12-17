@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+{%- include head.html -%}
+<body data-spy="scroll" data-target="#toc">
+{%- include header.html -%}
+<div class="container">
+  <div class="row">
+    <!-- sidebar, which will move to the top on a small screen -->
+    {% if page.show_sidebar == true %}
+    <div class="col-sm-3">
+      <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+    </div>
+    <!-- main content area -->
+    <div class="col-sm-9 main-content">{{ content }}</div>
+    {% else %}
+    <!-- main content area -->
+    <div class="col-lg-12 main-content">{{ content }}</div>
+    {% endif %}
+  </div>
+</div>
+{%- include footer.html -%}
+{%- include bottom-js.html -%}
+</body>
+</html>

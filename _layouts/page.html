@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article>
+  {% if page.title != '' %}
+  <header class="pt-2 pb-.5 page-header">
+    <h1>{{ page.title | escape }}</h1>
+    <h6 class="post-meta">{{ page.description | escape }}</h6>
+  </header>
+  {% endif %}
+  <div class="container">
+    {% if page.toc == true %}
+    <p>
+      <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Show table of contents
+      </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body bg-dark">
+        {{ content | toc_only }}
+      </div>
+    </div>
+    {{ content | inject_anchors }}
+    {% else %}
+    {{ content }}
+    {% endif %}
+  </div>
+</article>

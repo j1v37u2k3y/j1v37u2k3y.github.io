@@ -1,0 +1,9 @@
+{% assign tag-len = page.tags.size %}
+{% if tag-len > 0 %}
+  <span class="tag-list">
+    {% assign the_tags = page.tags | sort %}
+    {% for tag in the_tags %}
+    <a class="badge badge-secondary badge-pill" href="{{ site.tag_page | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
+    {% endfor %}
+  </span>
+{% endif %}

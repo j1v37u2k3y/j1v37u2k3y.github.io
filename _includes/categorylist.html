@@ -1,0 +1,9 @@
+{% assign category-len = page.categories.size %}
+{% if category-len > 0 %}
+  <span class="category-list">
+    {% assign categories = page.categories | sort %}
+    {% for category in categories %}
+    <a href="{{ site.category_page | relative_url }}#{{ category | slugify }}" class="badge badge-pill badge-secondary">{{ category }}</a>
+    {% endfor %}
+  </span>
+{% endif %}

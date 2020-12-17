@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="pt-4 pb-3 post-header">
+    <div>
+    <span class="post-meta text-secondary">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.modified_date -%}
+        ~
+        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
+        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+          {{ mdate | date: date_format }}
+        </time>
+        {%- endif -%}
+        {%- if page.author -%}
+        • {% for author in page.author %}
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+        {%- if forloop.last == false %}, {% endif -%}
+        {% endfor %}
+      • {{ page.content | number_of_words | divided_by:201 }} minutes to read
+      {%- endif -%}</span>
+      <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+      <span class="post-meta text-secondary">Tags:{%- include taglist.html -%}</span>
+      <span class="post-meta text-secondary float-right">Category:{%- include categorylist.html -%}</span>
+    </div>
+  </header>
+  <div itemprop="articleBody" id="content">
+    {% if page.toc == true %}
+    <p>
+      <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+         aria-controls="collapseExample">
+        Show table of contents
+      </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body bg-dark">
+        {{ content | toc_only }}
+      </div>
+    </div>
+    {{ content | inject_anchors }}
+    {% else %}
+    {{ content }}
+    {% endif %}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+  {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

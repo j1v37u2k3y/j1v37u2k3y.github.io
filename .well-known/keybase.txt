@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/j1v37u2k3y
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jiveturkey.rocks
+  * I am j1v37u2k3y (https://keybase.io/j1v37u2k3y) on keybase.
+  * I have a public key with fingerprint B09D 602F 8323 0B08 6331  6DDF DC05 7E5F 5362 2BDD
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01014c69250fff176047bb9c0442d3642dc25364987f3f325131deb34ca1a6b13d820a",
+      "fingerprint": "b09d602f83230b0863316ddfdc057e5f53622bdd",
+      "host": "keybase.io",
+      "key_id": "dc057e5f53622bdd",
+      "kid": "01014c69250fff176047bb9c0442d3642dc25364987f3f325131deb34ca1a6b13d820a",
+      "uid": "64cdb511cac98c9843dc172f8d874619",
+      "username": "j1v37u2k3y"
+    },
+    "service": {
+      "hostname": "jiveturkey.rocks",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1608098929,
+  "expire_in": 157680000,
+  "prev": "e4ef619083c78ac429b64f9c20cb0dba9af8092a8353f657c49655c59e08150d",
+  "seqno": 12,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMItAnicrZJbSBVBGMePmUlG0YUTZRq0LxGozezs9XQPu2hyNEgLTE67M7PH7dTu
+ObvnrIooWg89xIEwAgs6IEiS2QWEfAjKoiIJLCnI0sDQh0Q0ii4EFc1KvfXYMMzH
+zPy/3/y/j3m4NDuQl6VPXb4wNJ2OZz29n0kFIq+7E82cbpMmLtTMxeh8oCcIdZOR
+mEm4EAcggAKWVF4EhmFAWQKCrOsqBoLAEySxBfMii6oiG8hAvAgRJFRHAtagJukQ
+EYUHGlfEGaYVpU7cMa0kw+pAJRLgDQXxCOhAkRCCEiEGwUCUqWgwJM/rhLDEetv1
+M5g5XXNpiWmzM7aJzNv7h/4/+07N4yQBE12EEGtYVdgUEMFQZv6JIgsSVH2hSx1L
+O0mZ+jj0kJziY6iJayni2LlnYuq31q/lr8b0aDLlsEpKHBvHXEaIO3bSxvYJdluf
+TMbdkJ+dbIr78gaqR/6AIrppEdZNluFRxzVtiwtBpsRJ0ydDCShAVVReLeJoY9x0
+aMT0FaIsKYAN/x3qMSQVqMGsAwVhWdGwwKu6JBgq5gHWAdE1VTMYiNcUJCJDEmUs
+qJIoYlGlQIEi8Hvt0oRlMzbPfGpRxnTNqKWxsijX8mDw6MJAVl5gUc4C/5sF8hYv
+//v5Hszl/pJGy8KHl958vmf6tJX4eS1/i7P/4qbR69+4uyu799yq2F4Rjn04157d
+c7+wdUW4rq7/8diNtY293XfnvneVhxOFC1I1549t3FsTHZz2IDrfMfxmokZbMfP+
+45N9cFRZ8/bS1kVL0sEBryB8rc8a/GEcamgtzh86sqvzYmlt57t1wZaxzXX7Klfb
+r9ZvK/dG6Ehpe3Fp5YuvZ9q+rFl1abcytWwneb72Zc7D8v6us5fl6slgevaHt2V2
++POBxO3iyjtqe9uOCfFXY2ZD30hZ/b3OeN+ziuDB/J7xqkczOZ/mqiYnwPHtyyuv
+dPTWvkkXZHrGz12dHcj0zqWv5Hbg6vGxU19+AyA6Ras=
+=BSWK
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/j1v37u2k3y
+
+==================================================================

@@ -1,0 +1,14 @@
+{%- assign social = site.minima.social_links -%}
+
+<ul class="social-media-list">
+  {% for icon_data in social %}
+  {% assign icon = icon_data[1] %}
+  <li>
+    <a rel="me" href="{{ icon.url | escape }}" title="{{ icon.title | escape }}" target="_blank">
+      <svg class="svg-icon grey">
+        <use xlink:href="{{ '/assets/minima-social-icons.svg#' | append: icon_data[0] | relative_url }}"></use>
+      </svg>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

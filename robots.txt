@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /pages/categories
+Disallow: /pages/tags
+Sitemap: https://jiveturkey.rocks/sitemap.xml

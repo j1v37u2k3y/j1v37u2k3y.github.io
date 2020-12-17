@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" type="text/css" integrity="sha384-VEpVDzPR2x8NbTDZ8NFW4AWbtT2g/ollEzX/daZdW/YvUBlbgVtsxMftnJ84k0Cn" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" integrity="sha384-rgWRqC0OFPisxlUvl332tiM/qmaNxnlY46eksSZD84t+s2vZlqGeHrncwIRX7CGp" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" integrity="sha384-7PXRkl4YJnEpP8uU4ev9652TTZSxrqC8uOpcV1ftVEC7LVyLZqqDUAaq+Y+lGgr9" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><style>
+          .target:before {
+            content: "";
+            display: block;
+            height: 50px;
+            margin: -20px 0 0;
+          }
+          @media only screen and (min-width:1900px) {
+            .container {
+              width: 1800px;
+              }
+          }
+          .footer {
+            margin-top:60px;
+            padding-top:60px;
+            width: 100%;
+            height: 180px;
+            background-color: #f5f5f5;
+          }
+          .clickable {
+            cursor: pointer;
+          }
+          .panel-heading > h3:before {
+            font-family: 'Glyphicons Halflings';
+            content: "\e114"; /* glyphicon-chevron-down */
+            padding-right: 1em;
+          }
+          .panel-heading.collapsed > h3:before {
+            content: "\e080"; /* glyphicon-chevron-right */
+          }
+        </style>
+<title>Scan Report Nmap 7.91</title>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+</div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav">
+<li><a href="#scannedhosts">Scanned Hosts</a></li>
+<li><a href="#onlinehosts">Online Hosts</a></li>
+<li><a href="#openservices">Open Services</a></li>
+</ul></div>
+</div></nav><div class="container">
+<div class="jumbotron">
+<h1>Scan Report<br><small>Nmap 7.91</small>
+</h1>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">nmap -n -vvv -sS -sV -sC -p- -oA nmap/version --stylesheet https://jiveturkey.rocks/assets/reports/nmap/nmap-bootstrap.xsl 192.168.9.130</pre>
+<p class="lead">Fri Dec  4 13:19:08 2020 – Fri Dec  4 13:21:53 2020<br>1 hosts scanned.
+              1 hosts up.
+              0 hosts down.
+            </p>
+<div class="progress">
+<div class="progress-bar progress-bar-success" style="width:100%;">1<span class="sr-only"></span>
+</div>
+<div class="progress-bar progress-bar-danger" style="width:0%;">0<span class="sr-only"></span>
+</div>
+</div>
+</div>
+<h2 id="scannedhosts" class="target">Scanned Hosts</h2>
+<div class="table-responsive"><table id="table-overview" class="table table-striped dataTable" role="grid">
+<thead><tr>
+<th>State</th>
+<th>Address</th>
+<th>Hostname</th>
+<th>TCP (open)</th>
+<th>UDP (open)</th>
+</tr></thead>
+<tbody><tr>
+<td><span class="label label-success">up</span></td>
+<td>192.168.9.130</td>
+<td></td>
+<td>3</td>
+<td>0</td>
+</tr></tbody>
+</table></div>
+<script>
+            $(document).ready(function() {
+              $('#table-overview').DataTable();
+            });
+          </script><h2 id="onlinehosts" class="target">Online Hosts</h2>
+<div class="panel panel-default">
+<div class="panel-heading clickable" data-toggle="collapse" data-target="#192-168-9-130"><h3 class="panel-title">192.168.9.130</h3></div>
+<div class="panel-body collapse in" id="192-168-9-130">
+<h4>Ports</h4>
+<div class="table-responsive"><table class="table table-bordered">
+<thead><tr>
+<th>Port</th>
+<th>Protocol</th>
+<th>State<br>Reason</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>Extra Info</th>
+</tr></thead>
+<tbody>
+<tr class="success">
+<td title="Port">21</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">ftp</td>
+<td title="Product">vsftpd</td>
+<td title="Version">3.0.3</td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:vsftpd:vsftpd:3.0.3">cpe:/a:vsftpd:vsftpd:3.0.3</a><h5>ftp-anon</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Anonymous FTP login allowed (FTP code 230)
+dr-xr-xr-x    2 ftp      ftp          4096 Nov 08 15:29 anon</pre>
+<h5>ftp-syst</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  STAT:
+FTP server status:
+     Connected to ::ffff:192.168.9.129
+     Logged in as ftp
+     TYPE: ASCII
+     No session bandwidth limit
+     Session timeout in seconds is 300
+     Control connection is plain text
+     Data connections will be plain text
+     At session startup, client count was 1
+     vsFTPd 3.0.3 - secure, fast, stable
+End of status</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">22</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">ssh</td>
+<td title="Product">OpenSSH</td>
+<td title="Version">7.9p1 Debian 10+deb10u2</td>
+<td title="Extra Info">protocol 2.0</td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:openbsd:openssh:7.9p1">cpe:/a:openbsd:openssh:7.9p1</a><h5>ssh-hostkey</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  2048 43:30:8c:57:bc:49:68:49:9c:9a:53:e7:a9:b7:83:9f (RSA)
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCq+oocbQT+c73wXXDmSQrhe8f9OGxx41deFh60k1K/eyHSzEpU01VrC8sPUhhnx9YweljhcWt8XmdmQNqciXz9F8Io6/u441nwziXBKNmjeKzY/B9VRQXKwaQfNOtkJ/g1QijMT7xG/A6x3bI1Es5RMTuMHwf8/6P23s0OJWW2P0IPNW2dfTpdAcgXOoSZyA+ZrV8jvOuoADGWq93zHAW663HBHMOyzW452coJZ12I6DVvXURXAfNZygBmswh5Hf+gJ1UNMYJjuoEhmiPCMZK2F8GVdP0W4qEEY4ECwaz8NpKgn8OsbYYBmNyAavLtNGr+IYweLtj7WVGeaV/la423
+  256 c9:8d:46:c8:ef:33:d2:62:21:3a:bf:95:cb:fb:44:a3 (ECDSA)
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJ5iBoU1MSkyJr0Off1VNkZfhbQr6ro41DQRKqraAi/DLKRJhWiObYTaoIzzNOiuoYyyIPSGl/WHKal8Lkz9qmc=
+  256 9b:86:ff:5c:6c:61:50:d0:36:59:b0:7a:bf:77:b2:a6 (ED25519)
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMR0YBLhRmjcBvgDcedoiY4c0Ndrc+uYld9hYYerGvvb</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">1337</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">waste</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>fingerprint-strings</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  DNSStatusRequestTCP, DNSVersionBindReqTCP, NULL, RPCCheck, SMBProgNeg:
+    # WARZONE 2 # WARZONE 2 # WARZONE 2 #
+    {SECRET SYSTEM REMOTE ACCESS}
+    Username :
+  GenericLines, GetRequest, HTTPOptions, RTSPRequest, TLSSessionReq:
+    # WARZONE 2 # WARZONE 2 # WARZONE 2 #
+    {SECRET SYSTEM REMOTE ACCESS}
+    Username :Password :Token :
+  Help, Kerberos, SSLSessionReq, TerminalServerCookie:
+    # WARZONE 2 # WARZONE 2 # WARZONE 2 #
+    {SECRET SYSTEM REMOTE ACCESS}
+    Username :Password :</pre>
+</td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<h2 id="openservices" class="target">Open Services</h2>
+<div class="table-responsive"><table id="table-services" class="table table-striped dataTable" role="grid">
+<thead><tr>
+<th>Address</th>
+<th>Port</th>
+<th>Protocol</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>CPE</th>
+<th>Extra info</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>192.168.9.130</td>
+<td>21</td>
+<td>tcp</td>
+<td>ftp</td>
+<td>vsftpd</td>
+<td>3.0.3</td>
+<td>cpe:/a:vsftpd:vsftpd:3.0.3</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.9.130</td>
+<td>22</td>
+<td>tcp</td>
+<td>ssh</td>
+<td>OpenSSH</td>
+<td>7.9p1 Debian 10+deb10u2</td>
+<td>cpe:/a:openbsd:openssh:7.9p1</td>
+<td>protocol 2.0</td>
+</tr>
+<tr>
+<td>192.168.9.130</td>
+<td>1337</td>
+<td>tcp</td>
+<td>waste</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<script>
+            $(document).ready(function() {
+              $('#table-services').DataTable();
+            });
+          </script>
+</div>
+<footer class="footer"><div class="container"><p class="text-muted">
+              This report was generated with <a href="https://github.com/honze-net/nmap-bootstrap-xsl">Nmap Bootstrap XSL</a>.<br>
+              Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA</a>.<br>
+              Designed and built by Andreas Hontzia (<a href="https://www.twitter.com/honze_net">@honze_net</a>).<br></p></div></footer>
+</body>
+</html>
