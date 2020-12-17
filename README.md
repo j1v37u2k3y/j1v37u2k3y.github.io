@@ -1,3 +1,5 @@
+![Jekyll site CI](https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/workflows/Jekyll%20site%20CI/badge.svg?branch=master)
+
 # minima
 
 *Minima is a one-size-fits-all Jekyll theme for writers*. It's Jekyll's default (and first) theme. It's what you get when you run `jekyll new`.

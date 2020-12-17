@@ -8,7 +8,7 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-seo-tag"
   gem "jemoji"
-  gem "jekyll-toc"
+  #gem 'jekyll-toc', '~> 0.14.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
