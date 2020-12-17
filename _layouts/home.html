@@ -28,14 +28,17 @@ layout: default
     {%- for page in posts -%}
     <li class="py-2 post-list-li">
       <span class="post-meta">{{ page.date | date: date_format }} </span> <span class="post-meta time">• {{ page.content | number_of_words | divided_by:201 }} minutes to read </span>
-      <h3 class="post-list-header">
-        <a href="{{ page.url | relative_url }}">
-          {{ page.title | escape }}
-        </a>
-      </h3>
-      <div class="post-content2">
+      <header>
+        <h3 class="post-list-header">
+          <a href="{{ page.url | relative_url }}">
+            {{ page.title | escape }}
+          </a>
+        </h3>
         <span class="post-meta text-secondary">Tags:{%- include taglist.html -%}</span>
         <span class="post-meta text-secondary float-right">Category:{%- include categorylist.html -%}</span>
+      </header>
+      <hr/>
+      <div class="post-content2">
         {%- if site.show_excerpts -%}
         {{ page.excerpt }}
         {%- endif -%}
@@ -61,6 +64,8 @@ layout: default
   {%- endif -%}
 
   {% if site.plugins contains "jekyll-feed" %}
-  <a href="{{ '/feed.xml' | relative_url }}"><div id="rss-icon" class="mb-2"></div></a>
+  <a href="{{ '/feed.xml' | relative_url }}">
+    <div id="rss-icon" class="mb-2"></div>
+  </a>
   {% endif %}
 </div>
