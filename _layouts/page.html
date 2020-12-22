@@ -9,10 +9,6 @@ layout: default
   </header>
   {% endif %}
   <div class="container">
-    {% if page.toc == true %}
-    {{ content | inject_anchors }}
-    {% else %}
-    {{ content }}
-    {% endif %}
+    {% include anchor_headings.html html=content anchorBody="#" %}
   </div>
 </article>
