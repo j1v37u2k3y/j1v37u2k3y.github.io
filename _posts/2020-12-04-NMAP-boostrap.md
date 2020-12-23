@@ -26,5 +26,5 @@ nmap -n -vvv -sS -sV -sC -p- -oA nmap/version --stylesheet https://j1v37u2k3y.gi
 ## Then create the html file
 
 ```
-xsltproc -o version.html /root/nmap-bootstrap.xsl version.xml
+xsltproc -o nmap/version.html /root/nmap-bootstrap.xsl nmap/version.xml
 ```

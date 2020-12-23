@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" type="text/css" integrity="sha384-VEpVDzPR2x8NbTDZ8NFW4AWbtT2g/ollEzX/daZdW/YvUBlbgVtsxMftnJ84k0Cn" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" integrity="sha384-rgWRqC0OFPisxlUvl332tiM/qmaNxnlY46eksSZD84t+s2vZlqGeHrncwIRX7CGp" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" integrity="sha384-7PXRkl4YJnEpP8uU4ev9652TTZSxrqC8uOpcV1ftVEC7LVyLZqqDUAaq+Y+lGgr9" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><style>
+          .target:before {
+            content: "";
+            display: block;
+            height: 50px;
+            margin: -20px 0 0;
+          }
+          @media only screen and (min-width:1900px) {
+            .container {
+              width: 1800px;
+              }
+          }
+          .footer {
+            margin-top:60px;
+            padding-top:60px;
+            width: 100%;
+            height: 180px;
+            background-color: #f5f5f5;
+          }
+          .clickable {
+            cursor: pointer;
+          }
+          .panel-heading > h3:before {
+            font-family: 'Glyphicons Halflings';
+            content: "\e114"; /* glyphicon-chevron-down */
+            padding-right: 1em;
+          }
+          .panel-heading.collapsed > h3:before {
+            content: "\e080"; /* glyphicon-chevron-right */
+          }
+        </style>
+<title>Scan Report Nmap 7.91</title>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+</div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav">
+<li><a href="#scannedhosts">Scanned Hosts</a></li>
+<li><a href="#onlinehosts">Online Hosts</a></li>
+<li><a href="#openservices">Open Services</a></li>
+</ul></div>
+</div></nav><div class="container">
+<div class="jumbotron">
+<h1>Scan Report<br><small>Nmap 7.91</small>
+</h1>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">nmap -n -vvv -sS -sV -sC -p- -oA nmap/version --stylesheet https://j1v37u2k3y.github.io/assets/reports/nmap/nmap-bootstrap.xsl 192.168.5.8</pre>
+<p class="lead">Tue Dec 22 00:09:22 2020 – Tue Dec 22 00:09:44 2020<br>1 hosts scanned.
+              1 hosts up.
+              0 hosts down.
+            </p>
+<div class="progress">
+<div class="progress-bar progress-bar-success" style="width:100%;">1<span class="sr-only"></span>
+</div>
+<div class="progress-bar progress-bar-danger" style="width:0%;">0<span class="sr-only"></span>
+</div>
+</div>
+</div>
+<h2 id="scannedhosts" class="target">Scanned Hosts</h2>
+<div class="table-responsive"><table id="table-overview" class="table table-striped dataTable" role="grid">
+<thead><tr>
+<th>State</th>
+<th>Address</th>
+<th>Hostname</th>
+<th>TCP (open)</th>
+<th>UDP (open)</th>
+</tr></thead>
+<tbody><tr>
+<td><span class="label label-success">up</span></td>
+<td>192.168.5.8</td>
+<td></td>
+<td>2</td>
+<td>0</td>
+</tr></tbody>
+</table></div>
+<script>
+            $(document).ready(function() {
+              $('#table-overview').DataTable();
+            });
+          </script><h2 id="onlinehosts" class="target">Online Hosts</h2>
+<div class="panel panel-default">
+<div class="panel-heading clickable" data-toggle="collapse" data-target="#192-168-5-8"><h3 class="panel-title">192.168.5.8</h3></div>
+<div class="panel-body collapse in" id="192-168-5-8">
+<h4>Ports</h4>
+<div class="table-responsive"><table class="table table-bordered">
+<thead><tr>
+<th>Port</th>
+<th>Protocol</th>
+<th>State<br>Reason</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>Extra Info</th>
+</tr></thead>
+<tbody>
+<tr class="success">
+<td title="Port">22</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">ssh</td>
+<td title="Product">OpenSSH</td>
+<td title="Version">6.6.1p1 Ubuntu 2ubuntu2.13</td>
+<td title="Extra Info">Ubuntu Linux; protocol 2.0</td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:openbsd:openssh:6.6.1p1">cpe:/a:openbsd:openssh:6.6.1p1</a><h5>ssh-hostkey</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  1024 d8:e0:99:8c:76:f1:86:a3:ce:09:c8:19:a4:1d:c7:e1 (DSA)
+ssh-dss AAAAB3NzaC1kc3MAAACBAMz0EIQbXnFjhwcUPhkAKoei8vkeeOxMJtSpyouLLa9Oj/Ef21laXvRGWDWLKb8jc6d0h2BONMIKGCMrd9J+Js4lSDeHFGOLzpUzaX7NInNNQmvnlqOKiEBdxcvaETNIzjE/8KkZ/Szsc1KDymk2Aflic8j/p21bHygRrMvwKt7VAAAAFQD0qScKxCSG8wEI0QfXtw9lmu220wAAAIEAhyfMWnoz0x2SFqs+vP9UvwAwJLnv30ttJ3hmsvZz05lro0AROqB7rDf5/C24VhcZHDa6V7mRbuMjWra+OdpSte3AqNSo3/T1Mu1KKH3a1HkmCARg9a0HP0CM5fz4Liq+klK3tyu5iPa5xU71INBkedq0O5jJh4SH8wjT+Bt8Mn4AAACAbne62asZcSdYGhJwT7A6pPLlJwh3OddvUGXapt6Nb9oNnK6LLo98bXKFkb4ZcbrE89t9AE0uw9ReoZgGB0/SzLt+O02P3Wk3nuHmoZqoBONVIhIPsPX83RoJHHZvv0zgh//2J60rojUwkGqCpaj3Z5GquxsgEX7blz2CrE0NBFc=
+  2048 82:b0:20:bc:04:ea:3f:c2:cf:73:c3:d4:fa:b5:4b:47 (RSA)
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEVCDq0YQD6se02fjbvSkNq52KYNqR41J1z62oQBy6Y6UAGbUkQf0hsQRhMtX32W6lLkk6Uix4iK0Y4tGj2daQtUzH8CGT9ad9WpMHv7gmBCh5RN96txkr2CjnIbQRI9k2LAewbtEfLh47oeWEQ5CvtAeAEqlSdVQ5+dHh2cYe5utMQuPuRzuH9sx60+AT5Narwlt1k85WKg/U/cnDt4NXxuox59E2XR1hnPuxXzqEIIMTRQI/S7i8DesbOkYRZrIJt6K8PvyW56dlHPTv+6QRgaqqfXmVeDmPhYL6tcgf1QmiT4/qCyUFUgSMjA9uQGbMJ/TMbVXkfuZsBcamO9p/
+  256 03:4d:b0:70:4d:cf:5a:4a:87:c3:a5:ee:84:cc:aa:cc (ECDSA)
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCmdcq7adrCZddolRfs7wwmD8Dp+lCPCEguoTWqsW8RokH942KDFGWuY3DmbaujF24XPcZ3jrbSucYi6qYvVQT4=
+  256 64:cd:d0:af:6e:0d:20:13:01:96:3b:8d:16:3a:d6:1b (ED25519)
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICdQOPO/7pOuWETV6Pu59wiu0RMc/GEECB+w3bW5IBmf</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">80</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product">Apache httpd</td>
+<td title="Version">2.4.10</td>
+<td title="Extra Info">(Ubuntu)</td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:apache:http_server:2.4.10">cpe:/a:apache:http_server:2.4.10</a><h5>http-methods</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  Supported Methods: GET HEAD POST OPTIONS</pre>
+<h5>http-server-header</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Apache/2.4.10 (Ubuntu)</pre>
+<h5>http-title</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Site doesn't have a title (text/html).</pre>
+</td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<h2 id="openservices" class="target">Open Services</h2>
+<div class="table-responsive"><table id="table-services" class="table table-striped dataTable" role="grid">
+<thead><tr>
+<th>Address</th>
+<th>Port</th>
+<th>Protocol</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>CPE</th>
+<th>Extra info</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>192.168.5.8</td>
+<td>22</td>
+<td>tcp</td>
+<td>ssh</td>
+<td>OpenSSH</td>
+<td>6.6.1p1 Ubuntu 2ubuntu2.13</td>
+<td>cpe:/a:openbsd:openssh:6.6.1p1</td>
+<td>Ubuntu Linux; protocol 2.0</td>
+</tr>
+<tr>
+<td>192.168.5.8</td>
+<td>80</td>
+<td>tcp</td>
+<td>http</td>
+<td>Apache httpd</td>
+<td>2.4.10</td>
+<td>cpe:/a:apache:http_server:2.4.10</td>
+<td>(Ubuntu)</td>
+</tr>
+</tbody>
+</table></div>
+<script>
+            $(document).ready(function() {
+              $('#table-services').DataTable();
+            });
+          </script>
+</div>
+<footer class="footer"><div class="container"><p class="text-muted">
+              This report was generated with <a href="https://github.com/honze-net/nmap-bootstrap-xsl">Nmap Bootstrap XSL</a>.<br>
+              Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA</a>.<br>
+              Designed and built by Andreas Hontzia (<a href="https://www.twitter.com/honze_net">@honze_net</a>).<br></p></div></footer>
+</body>
+</html>
