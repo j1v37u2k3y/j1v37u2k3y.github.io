@@ -12,6 +12,7 @@ group :jekyll_plugins do
   gem "jekyll-paginate", "~> 1.1"
   gem "jekyll-redirect-from", "~> 0.12"
   gem "jekyll-toc"
+  gem "jekyll-twitter-plugin"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
