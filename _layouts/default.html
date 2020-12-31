@@ -11,16 +11,24 @@
       <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
     </div>
     <!-- main content area -->
+    {% if page.twitter-timeline %}
+    <div class="col-sm-6 main-content">{{ content }}</div>
+    <div class="col-lg-3 overflow-auto hidden-sm-down" style="max-height:600px">
+      {% include twitter.md %}
+    </div>
+    {% else %}
     <div class="col-sm-12 main-content">{{ content }}</div>
-    <!--<div class="col-lg-3 overflow-auto hidden-sm-down" style="max-height:600px">
-      {% include twitter.html %}
-    </div>-->
+    {% endif %}
     {% else %}
     <!-- main content area -->
+    {% if page.twitter-timeline %}
+    <div class="col-lg-9 main-content">{{ content }}</div>
+    <div class="col-lg-3 overflow-auto hidden-sm-down" style="max-height:600px">
+      {% include twitter.md %}
+    </div>
+    {% else %}
     <div class="col-lg-12 main-content">{{ content }}</div>
-    <!--<div class="col-lg-3 overflow-auto hidden-sm-down" style="max-height:600px">
-      {% include twitter.html %}
-    </div>-->
+    {% endif %}
     {% endif %}
   </div>
 </div>

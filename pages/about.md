@@ -2,6 +2,14 @@
 layout: page
 title: About
 permalink: /about
+twitter-timeline:
+  name: j1v37u2k3y1
+  width: 300
+  height: 300
+  chrome: nofooter noscrollbar noborders transparent
+  tweet_limit: 5
+  inject_js: true
+  theme: dark
 ---
 <div class="about-header">
 <span class="lambda">λ</span> <span class="tilde">\~</span> whoami
