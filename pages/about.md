@@ -11,6 +11,15 @@ twitter-timeline:
   inject_js: true
   theme: dark
 ---
+
+<div class="about-header">
+<span class="lambda">λ</span> <span class="tilde">\~</span> Site build status
+</div>
+<p>
+<a href="https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/actions" target="_blank"><img alt="Jekyll site CI" src="https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/workflows/Jekyll%20site%20CI/badge.svg?branch=master"></a>
+<!--[![Jekyll site CI](https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/workflows/Jekyll%20site%20CI/badge.svg?branch=master)](https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/actions)-->
+</p>
+
 <div class="about-header">
 <span class="lambda">λ</span> <span class="tilde">\~</span> whoami
 </div>

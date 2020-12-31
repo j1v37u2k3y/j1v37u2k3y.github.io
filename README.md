@@ -1,4 +1,4 @@
-![Jekyll site CI](https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/workflows/Jekyll%20site%20CI/badge.svg?branch=master)
+[![Jekyll site CI](https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/workflows/Jekyll%20site%20CI/badge.svg?branch=master)](https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/actions)
 
 # minima
 
