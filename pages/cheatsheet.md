@@ -467,9 +467,6 @@ Unmount:
 root@kali:~# umount /mnt/smb
 ```
 
-
-
-
 ## smbclient
 
 Null authentication:
@@ -4892,3 +4889,63 @@ Cmd > rmdir /S /Q C:\$Windows.~BT\
 ```
 Cmd > DISM /online /Enable-Feature /FeatureName:TelnetClient
 ```
+
+
+# SSH
+
+## ssh tunneling/port forwarding
+
+### Local
+
+```shell
+ssh -L 80:intra.example.com:80 gw.example.com
+```
+
+### Remote
+
+```shell
+ssh -R 8080:localhost:80 public.example.com
+```
+
+By default, OpenSSH only allows connecting to remote forwarded ports from the server host. However, the GatewayPorts option in the server configuration file sshd_config can be used to control this. The following alternatives are possible:
+
+```
+GatewayPorts no
+```
+This prevents connecting to forwarded ports from outside the server computer.
+
+```
+GatewayPorts yes
+```
+This allows anyone to connect to the forwarded ports. If the server is on the public Internet, anyone on the Internet can connect to the port.
+
+```
+GatewayPorts clientspecified
+```
+This means that the client can specify an IP address from which connections to the port are allowed. The syntax for this is:
+
+```
+ssh -R 52.194.1.73:8080:localhost:80 host147.aws.example.com
+```
+In this example, only connections from the IP address 52.194.1.73 to port 8080 are allowed.
+
+
+# BusyBox
+## Read only BusyBox:
+
+[![](/assets/images/cheatsheet/be7cb2a8.png)](/assets/images/cheatsheet/be7cb2a8.png)
+
+```shell
+mount -o remount,rw /dev/mmcblk1p2 /
+```
+
+## FTP 
+
+```shell
+tcpsvd -vE 0.0.0.0 21 ftpd /
+```
+
+## Live BusyBox
+
+<https://www.busybox.net/live_bbox/live_bbox.html>
+
