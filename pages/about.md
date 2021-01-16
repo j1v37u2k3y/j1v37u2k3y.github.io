@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about
 twitter-timeline:
-  name: j1v37u2k3y1
+  name: j1v37u2k3y
   width: 300
   height: 300
   chrome: nofooter noscrollbar noborders transparent
