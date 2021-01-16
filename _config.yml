@@ -25,7 +25,7 @@ minima:
   # generate social links in footer
   social_links:
     twitter:
-      url: https://twitter.com/j1v37u2k3y1
+      url: https://twitter.com/j1v37u2k3y
     github:
       url: https://github.com/j1v37u2k3y
     # devto: jekyll
