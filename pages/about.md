@@ -68,6 +68,7 @@ information posted on the pages of this website.
   <a href="https://www.hackthebox.eu/profile/29519" target="_blank"><img src="https://img.shields.io/badge/-hack%20the%20box-9FEF00?style=for-the-badge&logo=hack-the-box&logoColor=white" alt="Hack The Box" /></a>
   <a href="https://www.twitter.com/j1v37u2k3y" target="_blank"><img src="https://img.shields.io/badge/-twitter-9FEF00?color=blue&logo=twitter&style=for-the-badge" alt="Twitter" /></a>
   <a href="https://keybase.io/j1v37u2k3y" target="_blank"><img src="https://img.shields.io/badge/-keybase-33A0FF?style=for-the-badge&logo=keybase&logoColor=white" alt="Twitter" /></a>
+  <a href="javascript:alert('j1v37u2k3y#5676');" title="j1v37u2k3y#5676"><img src="https://img.shields.io/badge/-discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
 </p>
 
 <div class="about-header">
