@@ -90,3 +90,12 @@ information posted on the pages of this website.
 <span style="margin-left:5px">ıllıllı 𝕮𝖔𝖋𝖋𝖊𝖊 ıllıllı</span>
 </a>
 </p>
+
+<div class="about-header">
+<span class="lambda">λ</span> <span class="tilde">\~</span> Ellipal Cold Wallet
+</div>
+
+<p>
+  Get yours today: <a href="https://www.ellipal.com/?rfsn=5538524.44894a"><img src="https://img.shields.io/badge/-Ellipal-8B89CC?style=for-the-badge&logo=Ellipal&logoColor=white" alt="Ellipal" /></a>
+</p>
+
