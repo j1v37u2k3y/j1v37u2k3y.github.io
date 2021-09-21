@@ -23,11 +23,6 @@ Copy code for jekyll based themes
 
 ```scss
 // Copy code css
-.code-header {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .copy-code-button {
   display: grid;
   grid-auto-flow: column;
@@ -41,9 +36,7 @@ Copy code for jekyll based themes
   background-color: #3f3f3f;
   position: absolute;
   border-radius: .4rem;
-  /* top: 41px; */
   right: 26px;
-  //top: 10px;
 
   &::before {
     content: "Copy";
@@ -93,11 +86,10 @@ codeBlocks.forEach(function (codeBlock) {
     window.navigator.clipboard.writeText(code);
 
     copyButton.classList.add('copied');
-    var fourSeconds = 4000;
 
     setTimeout(function () {
       copyButton.classList.remove('copied');
-    }, fourSeconds);
+    }, 4000);
   });
 });
 ```

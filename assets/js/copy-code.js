@@ -13,10 +13,9 @@ codeBlocks.forEach(function (codeBlock) {
     window.navigator.clipboard.writeText(code);
 
     copyButton.classList.add('copied');
-    var fourSeconds = 4000;
 
     setTimeout(function () {
       copyButton.classList.remove('copied');
-    }, fourSeconds);
+    }, 4000);
   });
 });

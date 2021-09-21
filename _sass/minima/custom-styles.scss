@@ -137,11 +137,6 @@ hr {
 }
 
 // Copy code css
-.code-header {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .copy-code-button {
   display: grid;
   grid-auto-flow: column;
@@ -155,9 +150,7 @@ hr {
   background-color: #3f3f3f;
   position: absolute;
   border-radius: .4rem;
-  /* top: 41px; */
   right: 26px;
-  //top: 10px;
 
   &::before {
     content: "Copy";
