@@ -44,6 +44,8 @@ OCCUPATION=penetration_tester
 PASSION=/security/offensive
 LOCATION=/USA/
 LANG=en_US.UTF-8
+OSCP=true
+ZEND_ZCE_PHP=true
 ```
 
 
