@@ -15,7 +15,7 @@ Copy code for jekyll based themes
 <!--cut-->
 
 * TOC
-  {:toc}
+{:toc}
 
 # Copy code for jekyll based themes
 

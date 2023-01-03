@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Sans Holiday Hack Challenge Kringle Con3
+title:  Sans Holiday Hack Challenge Kringle Con3 2020
 categories: ctfs
 tags: [sans, ctf]
 published: true
@@ -18,6 +18,9 @@ To get to the North Pole and all the festivities, first review our [Code of Cond
 <https://2020.kringlecon.com/invite>
 
 <!--cut-->
+
+* TOC
+{:toc}
 
 # Objectives list
 

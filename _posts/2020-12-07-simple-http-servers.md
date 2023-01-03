@@ -13,6 +13,9 @@ I cannot tell you how many times I needed to have a quick and dirty way to trans
 
 <!--cut-->
 
+* TOC
+{:toc}
+
 ![banner.png](/assets/images/simple-http-servers/banner.png)
 {:.center-image}
 

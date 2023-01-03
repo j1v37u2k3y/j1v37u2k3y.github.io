@@ -17,6 +17,9 @@ Difficulty: Intermediate (Depends on experience)
 
 <!--cut-->
 
+* TOC
+{:toc}
+
 # NMAP
 <a href="{{ site.baseurl }}/assets/reports/nmap/vulnhub/devguru/version.html" target="_blank" title="Devguru NMAP Scan">Devguru NMAP Scan</a> 
  

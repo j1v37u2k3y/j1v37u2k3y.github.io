@@ -26,6 +26,10 @@ And then execute:
 
     $ bundle
 
+Server the website:
+
+    $ bundle exec jekyll serve
+
 
 ## Contents At-A-Glance
 

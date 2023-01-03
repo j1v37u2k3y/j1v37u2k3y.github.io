@@ -14,17 +14,25 @@ Nmap boostrap makes it easier to display nmap scan results in the browser.
 * TOC
 {:toc}
 
-# NMAP Boostrap 
+# NMAP Bootstrap 
 
  - [https://github.com/honze-net/nmap-bootstrap-xsl](https://github.com/honze-net/nmap-bootstrap-xsl)
 
-```
-mkdir nmap
-nmap -n -vvv -sS -sV -sC -p- -oA nmap/version --stylesheet https://j1v37u2k3y.github.io/assets/reports/nmap/nmap-bootstrap.xsl 192.168.9.130
+## Download XSL and run nmap
+
+
+```shell
+{% include run_with_nmap_bootstrap1.sh %}
 ```
 
-## Then create the html file
+## Create the html file
 
+```shell
+{% include run_with_nmap_bootstrap2.sh %}
 ```
-xsltproc -o nmap/version.html /root/nmap-bootstrap.xsl nmap/version.xml
+
+# Combined commands
+
+```shell
+{% include run_with_nmap_bootstrap.sh %}
 ```

