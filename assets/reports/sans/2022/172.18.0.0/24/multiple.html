@@ -2,30 +2,43 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="referrer" content="no-referrer">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script><script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script><script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><style>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" type="text/css" integrity="sha384-VEpVDzPR2x8NbTDZ8NFW4AWbtT2g/ollEzX/daZdW/YvUBlbgVtsxMftnJ84k0Cn" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" integrity="sha384-rgWRqC0OFPisxlUvl332tiM/qmaNxnlY46eksSZD84t+s2vZlqGeHrncwIRX7CGp" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" integrity="sha384-7PXRkl4YJnEpP8uU4ev9652TTZSxrqC8uOpcV1ftVEC7LVyLZqqDUAaq+Y+lGgr9" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><style>
           .target:before {
-            content: "";
-            display: block;
-            height: 50px;
-            margin: -20px 0 0;
+          content: "";
+          display: block;
+          height: 50px;
+          margin: -20px 0 0;
           }
           @media only screen and (min-width:1900px) {
-            .container {
-              width: 1800px;
-              }
+          .container {
+          width: 1800px;
+          }
           }
           .footer {
-            margin-top:60px;
-            padding-top:60px;
-            width: 100%;
-            height: 180px;
-            background-color: #f5f5f5;
+          margin-top:60px;
+          padding-top:60px;
+          width: 100%;
+          height: 180px;
+          background-color: #f5f5f5;
+          }
+          .clickable {
+          cursor: pointer;
+          }
+          .panel-heading > h3:before {
+          font-family: 'Glyphicons Halflings';
+          content: "\e114"; /* glyphicon-chevron-down */
+          padding-right: 1em;
+          }
+          .panel-heading.collapsed > h3:before {
+          content: "\e080"; /* glyphicon-chevron-right */
           }
         </style>
-<title>Scan Report Nmap 7.92</title>
+<title>Scan Report Nmap
+          7.92</title>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
@@ -39,21 +52,27 @@
 </ul></div>
 </div></nav><div class="container">
 <div class="jumbotron">
-<h1>Scan Report<br><small>Nmap 7.92</small>
+<h1>Scan Report
+              <br><small>Nmap
+                7.92</small>
 </h1>
 <pre style="white-space:pre-wrap; word-wrap:break-word;">nmap -n -vvv -p- -oA /root/nmap/172.18.0.0/24/refined/multiple --stylesheet /root/nmap-bootstrap.xsl -iL /root/nmap/172.18.0.0/24/hosts</pre>
-<p class="lead">Thu Dec 15 20:03:33 2022 – Thu Dec 15 20:03:39 2022<br>5 hosts scanned.
+<p class="lead">Thu Dec 15 20:03:33 2022 –
+              Thu Dec 15 20:03:39 2022<br>5 hosts scanned.
               5 hosts up.
               0 hosts down.
             </p>
 <div class="progress">
-<div class="progress-bar progress-bar-success" style="width:100%;">5<span class="sr-only"></span>
+<div class="progress-bar progress-bar-success" style="width:100%;
+                ">5<span class="sr-only"></span>
 </div>
-<div class="progress-bar progress-bar-danger" style="width:0%;">0<span class="sr-only"></span>
+<div class="progress-bar progress-bar-danger" style="width:0%;
+                ">0<span class="sr-only"></span>
 </div>
 </div>
 </div>
-<h2 id="scannedhosts" class="target">Scanned Hosts</h2>
+<h2 id="scannedhosts" class="target">Scanned Hosts
+            </h2>
 <div class="table-responsive"><table id="table-overview" class="table table-striped dataTable" role="grid">
 <thead><tr>
 <th>State</th>
@@ -65,35 +84,35 @@
 <tbody>
 <tr>
 <td><span class="label label-success">up</span></td>
-<td>172.18.0.1</td>
+<td><a href="#onlinehosts-172-18-0-1">172.18.0.1</a></td>
 <td></td>
 <td>6</td>
 <td>0</td>
 </tr>
 <tr>
 <td><span class="label label-success">up</span></td>
-<td>172.18.0.87</td>
+<td><a href="#onlinehosts-172-18-0-87">172.18.0.87</a></td>
 <td></td>
 <td>1</td>
 <td>0</td>
 </tr>
 <tr>
 <td><span class="label label-success">up</span></td>
-<td>172.18.0.88</td>
+<td><a href="#onlinehosts-172-18-0-88">172.18.0.88</a></td>
 <td></td>
 <td>2</td>
 <td>0</td>
 </tr>
 <tr>
 <td><span class="label label-success">up</span></td>
-<td>172.18.0.150</td>
+<td><a href="#onlinehosts-172-18-0-150">172.18.0.150</a></td>
 <td></td>
 <td>3</td>
 <td>0</td>
 </tr>
 <tr>
 <td><span class="label label-success">up</span></td>
-<td>172.18.0.99</td>
+<td><a href="#onlinehosts-172-18-0-99">172.18.0.99</a></td>
 <td></td>
 <td>1</td>
 <td>0</td>
@@ -102,18 +121,22 @@
 </table></div>
 <script>
             $(document).ready(function() {
-              $('#table-overview').DataTable();
+            $('#table-overview').DataTable();
+            });
+            $('#table-overview').DataTable( {
+            "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ]
             });
           </script><h2 id="onlinehosts" class="target">Online Hosts</h2>
 <div class="panel panel-default">
-<div class="panel-heading"><h3 class="panel-title">172.18.0.1</h3></div>
-<div class="panel-body">
+<div class="panel-heading clickable" data-toggle="collapse" id="onlinehosts-172-18-0-1" data-target="#172-18-0-1"><h3 class="panel-title">172.18.0.1</h3></div>
+<div class="panel-body collapse in" id="172-18-0-1">
 <h4>Ports</h4>
 <div class="table-responsive"><table class="table table-bordered">
 <thead><tr>
 <th>Port</th>
 <th>Protocol</th>
-<th>State<br>Reason</th>
+<th>State<br>Reason
+                        </th>
 <th>Service</th>
 <th>Product</th>
 <th>Version</th>
@@ -185,14 +208,15 @@
 </div>
 </div>
 <div class="panel panel-default">
-<div class="panel-heading"><h3 class="panel-title">172.18.0.87</h3></div>
-<div class="panel-body">
+<div class="panel-heading clickable" data-toggle="collapse" id="onlinehosts-172-18-0-87" data-target="#172-18-0-87"><h3 class="panel-title">172.18.0.87</h3></div>
+<div class="panel-body collapse in" id="172-18-0-87">
 <h4>Ports</h4>
 <div class="table-responsive"><table class="table table-bordered">
 <thead><tr>
 <th>Port</th>
 <th>Protocol</th>
-<th>State<br>Reason</th>
+<th>State<br>Reason
+                        </th>
 <th>Service</th>
 <th>Product</th>
 <th>Version</th>
@@ -214,14 +238,15 @@
 </div>
 </div>
 <div class="panel panel-default">
-<div class="panel-heading"><h3 class="panel-title">172.18.0.88</h3></div>
-<div class="panel-body">
+<div class="panel-heading clickable" data-toggle="collapse" id="onlinehosts-172-18-0-88" data-target="#172-18-0-88"><h3 class="panel-title">172.18.0.88</h3></div>
+<div class="panel-body collapse in" id="172-18-0-88">
 <h4>Ports</h4>
 <div class="table-responsive"><table class="table table-bordered">
 <thead><tr>
 <th>Port</th>
 <th>Protocol</th>
-<th>State<br>Reason</th>
+<th>State<br>Reason
+                        </th>
 <th>Service</th>
 <th>Product</th>
 <th>Version</th>
@@ -253,14 +278,15 @@
 </div>
 </div>
 <div class="panel panel-default">
-<div class="panel-heading"><h3 class="panel-title">172.18.0.150</h3></div>
-<div class="panel-body">
+<div class="panel-heading clickable" data-toggle="collapse" id="onlinehosts-172-18-0-150" data-target="#172-18-0-150"><h3 class="panel-title">172.18.0.150</h3></div>
+<div class="panel-body collapse in" id="172-18-0-150">
 <h4>Ports</h4>
 <div class="table-responsive"><table class="table table-bordered">
 <thead><tr>
 <th>Port</th>
 <th>Protocol</th>
-<th>State<br>Reason</th>
+<th>State<br>Reason
+                        </th>
 <th>Service</th>
 <th>Product</th>
 <th>Version</th>
@@ -302,14 +328,15 @@
 </div>
 </div>
 <div class="panel panel-default">
-<div class="panel-heading"><h3 class="panel-title">172.18.0.99</h3></div>
-<div class="panel-body">
+<div class="panel-heading clickable" data-toggle="collapse" id="onlinehosts-172-18-0-99" data-target="#172-18-0-99"><h3 class="panel-title">172.18.0.99</h3></div>
+<div class="panel-body collapse in" id="172-18-0-99">
 <h4>Ports</h4>
 <div class="table-responsive"><table class="table table-bordered">
 <thead><tr>
 <th>Port</th>
 <th>Protocol</th>
-<th>State<br>Reason</th>
+<th>State<br>Reason
+                        </th>
 <th>Service</th>
 <th>Product</th>
 <th>Version</th>
@@ -344,7 +371,7 @@
 </tr></thead>
 <tbody>
 <tr>
-<td>172.18.0.1</td>
+<td><a href="#onlinehosts-172-18-0-1">172.18.0.1</a></td>
 <td>22</td>
 <td>tcp</td>
 <td>ssh</td>
@@ -354,7 +381,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.1</td>
+<td><a href="#onlinehosts-172-18-0-1">172.18.0.1</a></td>
 <td>80</td>
 <td>tcp</td>
 <td>http</td>
@@ -364,7 +391,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.1</td>
+<td><a href="#onlinehosts-172-18-0-1">172.18.0.1</a></td>
 <td>2222</td>
 <td>tcp</td>
 <td>EtherNetIP-1</td>
@@ -374,7 +401,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.1</td>
+<td><a href="#onlinehosts-172-18-0-1">172.18.0.1</a></td>
 <td>8080</td>
 <td>tcp</td>
 <td>http-proxy</td>
@@ -384,7 +411,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.1</td>
+<td><a href="#onlinehosts-172-18-0-1">172.18.0.1</a></td>
 <td>8088</td>
 <td>tcp</td>
 <td>radan-http</td>
@@ -394,7 +421,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.1</td>
+<td><a href="#onlinehosts-172-18-0-1">172.18.0.1</a></td>
 <td>10022</td>
 <td>tcp</td>
 <td>unknown</td>
@@ -404,7 +431,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.87</td>
+<td><a href="#onlinehosts-172-18-0-87">172.18.0.87</a></td>
 <td>3306</td>
 <td>tcp</td>
 <td>mysql</td>
@@ -414,7 +441,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.88</td>
+<td><a href="#onlinehosts-172-18-0-88">172.18.0.88</a></td>
 <td>22</td>
 <td>tcp</td>
 <td>ssh</td>
@@ -424,7 +451,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.88</td>
+<td><a href="#onlinehosts-172-18-0-88">172.18.0.88</a></td>
 <td>80</td>
 <td>tcp</td>
 <td>http</td>
@@ -434,7 +461,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.150</td>
+<td><a href="#onlinehosts-172-18-0-150">172.18.0.150</a></td>
 <td>22</td>
 <td>tcp</td>
 <td>ssh</td>
@@ -444,7 +471,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.150</td>
+<td><a href="#onlinehosts-172-18-0-150">172.18.0.150</a></td>
 <td>80</td>
 <td>tcp</td>
 <td>http</td>
@@ -454,7 +481,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.150</td>
+<td><a href="#onlinehosts-172-18-0-150">172.18.0.150</a></td>
 <td>8181</td>
 <td>tcp</td>
 <td>intermapper</td>
@@ -464,7 +491,7 @@
 <td></td>
 </tr>
 <tr>
-<td>172.18.0.99</td>
+<td><a href="#onlinehosts-172-18-0-99">172.18.0.99</a></td>
 <td>2222</td>
 <td>tcp</td>
 <td>EtherNetIP-1</td>
@@ -477,13 +504,25 @@
 </table></div>
 <script>
             $(document).ready(function() {
-              $('#table-services').DataTable();
+            $('#table-services').DataTable();
+            $("a[href^='#onlinehosts-']").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:($(this.hash).offset().top-60)}, 500);
             });
+            });
+            $('#table-services').DataTable( {
+            "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ]
+            });
+
           </script>
 </div>
 <footer class="footer"><div class="container"><p class="text-muted">
-              This report was generated with <a href="https://github.com/honze-net/nmap-bootstrap-xsl">Nmap Bootstrap XSL</a>.<br>
-              Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA</a>.<br>
-              Designed and built by Andreas Hontzia (<a href="https://www.twitter.com/honze_net">@honze_net</a>).<br></p></div></footer>
+              This report was generated with <a href="https://github.com/honze-net/nmap-bootstrap-xsl">Nmap Bootstrap
+              XSL</a>.
+              <br>
+              Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA</a>.
+              <br>
+              Designed and built by Andreas Hontzia (<a href="https://www.twitter.com/honze_net">@honze_net</a>).
+              <br></p></div></footer>
 </body>
 </html>

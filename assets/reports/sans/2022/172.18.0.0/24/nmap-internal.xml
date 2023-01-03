@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="/root/nmap-bootstrap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Thu Dec 15 20:03:33 2022 as: nmap -n -vvv -p- -oA /root/nmap/172.18.0.0/24/refined/multiple -&#45;stylesheet /root/nmap-bootstrap.xsl -iL /root/nmap/172.18.0.0/24/hosts -->
+<nmaprun scanner="nmap"
+         args="nmap -n -vvv -p- -oA /root/nmap/172.18.0.0/24/refined/multiple -&#45;stylesheet /root/nmap-bootstrap.xsl -iL /root/nmap/172.18.0.0/24/hosts"
+         start="1671134613" startstr="Thu Dec 15 20:03:33 2022" version="7.92" xmloutputversion="1.05">
+  <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+  <verbose level="3"/>
+  <debugging level="0"/>
+  <taskbegin task="ARP Ping Scan" time="1671134613"/>
+  <hosthint>
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="172.18.0.87" addrtype="ipv4"/>
+    <address addr="02:42:AC:12:00:57" addrtype="mac"/>
+    <hostnames>
+    </hostnames>
+  </hosthint>
+  <hosthint>
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="172.18.0.88" addrtype="ipv4"/>
+    <address addr="02:42:AC:12:00:58" addrtype="mac"/>
+    <hostnames>
+    </hostnames>
+  </hosthint>
+  <hosthint>
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="172.18.0.150" addrtype="ipv4"/>
+    <address addr="02:42:AC:12:00:96" addrtype="mac"/>
+    <hostnames>
+    </hostnames>
+  </hosthint>
+  <hosthint>
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="172.18.0.1" addrtype="ipv4"/>
+    <address addr="02:42:F9:89:71:80" addrtype="mac"/>
+    <hostnames>
+    </hostnames>
+  </hosthint>
+  <taskend task="ARP Ping Scan" time="1671134613" extrainfo="4 total hosts"/>
+  <taskbegin task="SYN Stealth Scan" time="1671134613"/>
+  <taskend task="SYN Stealth Scan" time="1671134618" extrainfo="262140 total ports"/>
+  <host starttime="1671134614" endtime="1671134618">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="172.18.0.1" addrtype="ipv4"/>
+    <address addr="02:42:F9:89:71:80" addrtype="mac"/>
+    <hostnames>
+    </hostnames>
+    <ports>
+      <extraports state="closed" count="65529">
+        <extrareasons reason="reset" count="65529" proto="tcp"
+                      ports="1-21,23-79,81-2221,2223-8079,8081-8087,8089-10021,10023-65535"/>
+      </extraports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" method="table" conf="3"/>
+      </port>
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="http" method="table" conf="3"/>
+      </port>
+      <port protocol="tcp" portid="2222">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="EtherNetIP-1" method="table" conf="3"/>
+      </port>
+      <port protocol="tcp" portid="8080">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="http-proxy" method="table" conf="3"/>
+      </port>
+      <port protocol="tcp" portid="8088">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="radan-http" method="table" conf="3"/>
+      </port>
+      <port protocol="tcp" portid="10022">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="unknown" method="table" conf="3"/>
+      </port>
+    </ports>
+    <times srtt="10" rttvar="0" to="100000"/>
+  </host>
+  <host starttime="1671134614" endtime="1671134618">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="172.18.0.87" addrtype="ipv4"/>
+    <address addr="02:42:AC:12:00:57" addrtype="mac"/>
+    <hostnames></hostnames>
+    <ports>
+      <extraports state="closed" count="65534">
+        <extrareasons reason="reset" count="65534" proto="tcp" ports="1-3305,3307-65535"/>
+      </extraports>
+      <port protocol="tcp" portid="3306">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="mysql" method="table" conf="3"/>
+      </port>
+    </ports>
+    <times srtt="9" rttvar="0" to="100000"/>
+  </host>
+  <host starttime="1671134614" endtime="1671134618">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="172.18.0.88" addrtype="ipv4"/>
+    <address addr="02:42:AC:12:00:58" addrtype="mac"/>
+    <hostnames>
+    </hostnames>
+    <ports>
+      <extraports state="closed" count="65533">
+        <extrareasons reason="reset" count="65533" proto="tcp" ports="1-21,23-79,81-65535"/>
+      </extraports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" method="table" conf="3"/>
+      </port>
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="http" method="table" conf="3"/>
+      </port>
+    </ports>
+    <times srtt="9" rttvar="0" to="100000"/>
+  </host>
+  <host starttime="1671134614" endtime="1671134618">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="172.18.0.150" addrtype="ipv4"/>
+    <address addr="02:42:AC:12:00:96" addrtype="mac"/>
+    <hostnames>
+    </hostnames>
+    <ports>
+      <extraports state="closed" count="65532">
+        <extrareasons reason="reset" count="65532" proto="tcp" ports="1-21,23-79,81-8180,8182-65535"/>
+      </extraports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" method="table" conf="3"/>
+      </port>
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="http" method="table" conf="3"/>
+      </port>
+      <port protocol="tcp" portid="8181">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="intermapper" method="table" conf="3"/>
+      </port>
+    </ports>
+    <times srtt="14" rttvar="1" to="100000"/>
+  </host>
+  <taskbegin task="SYN Stealth Scan" time="1671134618"/>
+  <taskend task="SYN Stealth Scan" time="1671134619" extrainfo="65535 total ports"/>
+  <host starttime="1671134618" endtime="1671134619">
+    <status state="up" reason="localhost-response" reason_ttl="0"/>
+    <address addr="172.18.0.99" addrtype="ipv4"/>
+    <hostnames>
+    </hostnames>
+    <ports>
+      <extraports state="closed" count="65534">
+        <extrareasons reason="reset" count="65534" proto="tcp" ports="1-2221,2223-65535"/>
+      </extraports>
+      <port protocol="tcp" portid="2222">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="EtherNetIP-1" method="table" conf="3"/>
+      </port>
+    </ports>
+    <times srtt="5" rttvar="3" to="100000"/>
+  </host>
+  <runstats>
+    <finished time="1671134619" timestr="Thu Dec 15 20:03:39 2022"
+              summary="Nmap done at Thu Dec 15 20:03:39 2022; 5 IP addresses (5 hosts up) scanned in 6.13 seconds"
+              elapsed="6.13" exit="success"/>
+    <hosts up="5" down="0" total="5"/>
+  </runstats>
+</nmaprun>
