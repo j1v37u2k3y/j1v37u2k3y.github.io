@@ -23,6 +23,7 @@ Copy code for jekyll based themes
 
 ```scss
 // Copy code css
+
 .copy-code-button {
   display: grid;
   grid-auto-flow: column;
@@ -35,8 +36,9 @@ Copy code for jekyll based themes
   color: #ffffff;
   background-color: #3f3f3f;
   position: absolute;
-  border-radius: .4rem;
-  right: 26px;
+  border-radius: .2rem;
+  right: 29px;
+  margin-top: -45px;
 
   &::before {
     content: "Copy";
