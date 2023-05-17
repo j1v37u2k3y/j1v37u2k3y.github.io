@@ -236,6 +236,8 @@ Mount SMB in Windows with `net use`:
 root@kali:$ impacket-smbserver -username j1v37u2k3y -password 'Passw0rd!' -smb2support share `pwd`
 PS > net use Z: \\10.10.14.16\share
 PS > net use Z: \\10.10.14.16\share /u:j1v37u2k3y 'Passw0rd!'
+# Delete the share after use
+PS > net use Z: /d
 ```
 
 Mount SMB in Windows with `New-PSDrive`:
