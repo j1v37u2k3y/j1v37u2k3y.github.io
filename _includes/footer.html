@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col col-lg-12">
-        <div class="h5"><a class="u-url" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></div>
+        <div class="h5">
+          <a class="u-url" href="{{ '/' | relative_url }}">
+            <img src="{{ '/apple-touch-icon.png' | relative_url }}" alt="logo" height="85"/> {{ site.title | escape }}
+          </a>
+        </div>
       </div>
     </div>
 
