@@ -34,6 +34,8 @@ twitter-timeline:
 
 [![GitHub-Stats](https://github-readme-stats.vercel.app/api?username=j1v37u2k3y&hide=issues&show_icons=true&include_all_commits=true&theme=chartreuse-dark)](https://github.com/j1v37u2k3y)
 
+[![GitHub-Stats](https://github-readme-stats.vercel.app/api/top-langs?username=j1v37u2k3y&show_icons=true&theme=chartreuse-dark)](https://github.com/j1v37u2k3y)
+
 <div class="about-header">
 <span class="lambda">λ</span> <span class="tilde">\~</span> env
 </div>
