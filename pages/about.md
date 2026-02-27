@@ -16,7 +16,7 @@ twitter-timeline:
 <span class="lambda">λ</span> <span class="tilde">\~</span> Site build status
 </div>
 <p>
-<a href="https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/actions" target="_blank"><img alt="Jekyll site CI" src="https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/workflows/Jekyll%20site%20CI/badge.svg?branch=master"></a>
+<a href="https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/actions/workflows/jekyll.yml" target="_blank"><img alt="Jekyll site CI" src="https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/actions/workflows/jekyll.yml/badge.svg?branch=master"></a>
 <!--[![Jekyll site CI](https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/workflows/Jekyll%20site%20CI/badge.svg?branch=master)](https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/actions)-->
 </p>
 
@@ -25,16 +25,16 @@ twitter-timeline:
 </div>
 <p>
 <!--[![HackTheBox-Badge](http://www.hackthebox.eu/badge/image/29519)](https://www.hackthebox.eu/profile/29519)-->
-<a href="https://app.hackthebox.eu/profile/29519" target="_blank"><script src="https://www.hackthebox.eu/badge/29519"></script></a>
+<a href="https://profile.hackthebox.com/profile/019c9faf-ec42-70ed-8efb-5f1afa267019" target="_blank"><img src="https://www.hackthebox.com/badge/image/29519" alt="Hack The Box"></a>
 </p>
 
 <div class="about-header">
 <span class="lambda">λ</span> <span class="tilde">\~</span> git quick-stats
 </div>
 
-[![GitHub-Stats](https://github-readme-stats.vercel.app/api?username=j1v37u2k3y&hide=issues&show_icons=true&include_all_commits=true&theme=chartreuse-dark)](https://github.com/j1v37u2k3y)
+[![GitHub-Stats](https://github-readme-stats-nine-peach-dijclfojg7.vercel.app/api?username=j1v37u2k3y&hide=issues&show_icons=true&include_all_commits=true&theme=chartreuse-dark)](https://github.com/j1v37u2k3y)
 
-[![GitHub-Stats](https://github-readme-stats.vercel.app/api/top-langs?username=j1v37u2k3y&show_icons=true&theme=chartreuse-dark)](https://github.com/j1v37u2k3y)
+[![GitHub-Stats](https://github-readme-stats-nine-peach-dijclfojg7.vercel.app/api/top-langs?username=j1v37u2k3y&show_icons=true&theme=chartreuse-dark)](https://github.com/j1v37u2k3y)
 
 <div class="about-header">
 <span class="lambda">λ</span> <span class="tilde">\~</span> env
@@ -69,9 +69,8 @@ information posted on the pages of this website.
 
 <p>
   <a href="https://github.com/j1v37u2k3y" target="_blank"><img src="https://img.shields.io/badge/-GitHub-181717?color=black&style=for-the-badge&logo=github" alt="GitHub" /></a>
-  <a href="https://www.hackthebox.eu/profile/29519" target="_blank"><img src="https://img.shields.io/badge/-hack%20the%20box-9FEF00?style=for-the-badge&logo=hack-the-box&logoColor=white" alt="Hack The Box" /></a>
-  <a href="https://www.twitter.com/j1v37u2k3y" target="_blank"><img src="https://img.shields.io/badge/-twitter-9FEF00?color=blue&logo=twitter&style=for-the-badge" alt="Twitter" /></a>
-  <a href="https://keybase.io/j1v37u2k3y" target="_blank"><img src="https://img.shields.io/badge/-keybase-33A0FF?style=for-the-badge&logo=keybase&logoColor=white" alt="Twitter" /></a>
+  <a href="https://profile.hackthebox.com/profile/019c9faf-ec42-70ed-8efb-5f1afa267019" target="_blank"><img src="https://img.shields.io/badge/-hack%20the%20box-9FEF00?style=for-the-badge&logo=hack-the-box&logoColor=white" alt="Hack The Box" /></a>
+  <a href="https://x.com/j1v37u2k3y" target="_blank"><img src="https://img.shields.io/badge/-X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
   <a href="javascript:alert('j1v37u2k3y#5676');" title="j1v37u2k3y#5676"><img src="https://img.shields.io/badge/-discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
 </p>
 
