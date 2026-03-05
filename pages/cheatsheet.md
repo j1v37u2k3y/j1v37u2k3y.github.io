@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cheatsheet
-description: (Use ctrl+f to navigate around)
+description: Use the tag filters below to narrow sections, or ctrl+f to search
 permalink: /cheatsheet
 show_sidebar: true
 toc: true
