@@ -19,30 +19,37 @@ Personal security blog hosted at [jiveturkey.rocks](https://jiveturkey.rocks). F
 
 ## Local Development
 
-### Prerequisites
+### Docker (recommended)
 
-- Ruby
-- Bundler
-
-### Setup
+Requires [Docker](https://docs.docker.com/get-docker/).
 
 ```sh
-script/bootstrap
+make serve
 ```
 
-### Run
+This builds the Docker image, installs all dependencies, and starts a local dev server with live reload and drafts enabled.
+
+Open [http://localhost:4000](http://localhost:4000).
+
+| Command | Description |
+|---|---|
+| `make serve` | Build and start the dev server |
+| `make up` | Start in detached (background) mode |
+| `make down` | Stop the running containers |
+| `make logs` | Tail logs from a detached container |
+| `make clean` | Remove containers, volumes, and generated files |
+
+### Without Docker
+
+Requires Ruby and Bundler.
 
 ```sh
-script/server
+script/bootstrap   # install dependencies
+script/server      # start dev server
+script/build       # production build
 ```
 
-Then open [http://localhost:4000](http://localhost:4000).
-
-### Build
-
-```sh
-script/build
-```
+Open [http://localhost:4000](http://localhost:4000).
 
 ## License
 
