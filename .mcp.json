@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "j1v37u2k3y-blog": {
+      "type": "stdio",
+      "command": "mcp-server/.venv/bin/python",
+      "args": [
+        "mcp-server/server.py"
+      ],
+      "env": {}
+    }
+  }
+}
