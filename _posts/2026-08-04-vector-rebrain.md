@@ -201,6 +201,10 @@ Strip the robot away and the lessons are portable to basically any system you'll
 He listens, he thinks, he answers — all of it on my hardware, none of it on anyone's terms but mine. Not bad for a robot
 the internet had written off as e-waste.
 
+**Want the actual build?** I wrote up every step — the OSKR unlock, the flash, root, the sanitizing proxy, the whole
+config — as a redacted, reproducible how-to:
+[How I Actually Rooted a Discontinued Vector]({% post_url 2026-08-05-rooting-a-discontinued-vector %}).
+
 # Credit where it's due
 
 I invented none of this. I wired existing pieces together on my own robot; other people did the hard part, in the open,
