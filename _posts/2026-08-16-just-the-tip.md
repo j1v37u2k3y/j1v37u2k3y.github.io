@@ -308,4 +308,4 @@ in the `Onion-Location` header — or right up there in the address I already ga
 
 ---
 
-*⚒ j1v37u2k3y · jiveturkey.rocks*
+*⚒ j1v37u2k3y · [jiveturkey.rocks](https://jiveturkey.rocks/)*
