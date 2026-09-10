@@ -13,7 +13,7 @@ twitter-timeline:
 ---
 
 <div class="about-header">
-<span class="lambda">λ</span> <span class="tilde">\~</span> Site build status
+<span class="lambda">λ</span> <span class="tilde">~</span> Site build status
 </div>
 <p>
 <a href="https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/actions/workflows/jekyll.yml" target="_blank"><img alt="Jekyll site CI" src="https://github.com/j1v37u2k3y/j1v37u2k3y.github.io/actions/workflows/jekyll.yml/badge.svg?branch=master"></a>
@@ -21,19 +21,19 @@ twitter-timeline:
 </p>
 
 <div class="about-header">
-<span class="lambda">λ</span> <span class="tilde">\~</span> whoami
+<span class="lambda">λ</span> <span class="tilde">~</span> whoami
 </div>
 
 Offensive security engineer. Self-taught since 2003, starting in a USMC barracks — barracks coder to security
 engineer is the whole arc.
 
-Day to day that's web apps, Active Directory, cloud and containers. Off hours it's building the tooling I wished
-existed, then writing down exactly how it broke — a robot that shouldn't have been on my network, an IP finder that
-phones nobody home, an MCP server that remembers the engagement so I don't have to.
+Day to day that's web apps, Active Directory, cloud and containers. Off hours it's building the tooling, then writing
+down exactly how it broke — a robot that shouldn't have been on my network, an IP finder that phones nobody home, an MCP
+server that remembers the engagement so I don't have to.
 
 I build before I break. It's hard to take something apart honestly if you've never had to make one stand up.
 
-Facts, not opinions. Three boys watching. I'm still building — are you?
+Facts, not opinions. I'm still building — are you?
 
 <p>
 <!--[![HackTheBox-Badge](http://www.hackthebox.eu/badge/image/29519)](https://www.hackthebox.eu/profile/29519)-->
@@ -41,7 +41,7 @@ Facts, not opinions. Three boys watching. I'm still building — are you?
 </p>
 
 <div class="about-header">
-<span class="lambda">λ</span> <span class="tilde">\~</span> git quick-stats
+<span class="lambda">λ</span> <span class="tilde">~</span> git quick-stats
 </div>
 
 [![GitHub-Stats](https://github-readme-stats-nine-peach-dijclfojg7.vercel.app/api?username=j1v37u2k3y&hide=issues&show_icons=true&include_all_commits=true&theme=chartreuse-dark)](https://github.com/j1v37u2k3y)
@@ -49,7 +49,7 @@ Facts, not opinions. Three boys watching. I'm still building — are you?
 [![GitHub-Stats](https://github-readme-stats-nine-peach-dijclfojg7.vercel.app/api/top-langs?username=j1v37u2k3y&show_icons=true&theme=chartreuse-dark)](https://github.com/j1v37u2k3y)
 
 <div class="about-header">
-<span class="lambda">λ</span> <span class="tilde">\~</span> env
+<span class="lambda">λ</span> <span class="tilde">~</span> env
 </div>
 
 
@@ -65,7 +65,7 @@ ZCE_PHP=true
 
 
 <div class="about-header">
-<span class="lambda">λ</span> <span class="tilde">\~</span> cat <span style="text-decoration:underline">.disclaimer</span>
+<span class="lambda">λ</span> <span class="tilde">~</span> cat <span style="text-decoration:underline">.disclaimer</span>
 </div>
 
 
@@ -77,7 +77,7 @@ information posted on the pages of this website.
 
 
 <div class="about-header">
-<span class="lambda">λ</span> <span class="tilde">\~</span> ls <span style="text-decoration:underline">/etc/nginx/sites-enabled</span>
+<span class="lambda">λ</span> <span class="tilde">~</span> ls <span style="text-decoration:underline">/etc/nginx/sites-enabled</span>
 </div>
 
 <p>
@@ -88,7 +88,7 @@ information posted on the pages of this website.
 </p>
 
 <div class="about-header">
-<span class="lambda">λ</span> <span class="tilde">\~</span> dig localhost mx
+<span class="lambda">λ</span> <span class="tilde">~</span> dig localhost mx
 </div>
 
 <p>
@@ -96,7 +96,7 @@ information posted on the pages of this website.
 </p>
 
 <div class="about-header">
-<span class="lambda">λ</span> <span class="tilde">\~</span> cowsay Coffee
+<span class="lambda">λ</span> <span class="tilde">~</span> cowsay Coffee
 </div>
 
 <p>
@@ -108,7 +108,7 @@ information posted on the pages of this website.
 </p>
 
 <div class="about-header">
-<span class="lambda">λ</span> <span class="tilde">\~</span> Ellipal Cold Wallet
+<span class="lambda">λ</span> <span class="tilde">~</span> Ellipal Cold Wallet
 </div>
 
 <p>
