@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about
+permalink: /about/
 twitter-timeline:
   name: j1v37u2k3y
   width: 300
@@ -42,11 +42,12 @@ twitter-timeline:
 
 
 ```
-OCCUPATION=penetration_tester
+OCCUPATION=offensive_security_engineer
 PASSION=/security/offensive
 LOCATION=/USA/
 LANG=en_US.UTF-8
 OSCP=true
+OSWA=true
 ZCE_PHP=true
 ```
 

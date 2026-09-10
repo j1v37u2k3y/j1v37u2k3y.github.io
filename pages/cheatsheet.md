@@ -2,7 +2,7 @@
 layout: page
 title: Cheatsheet
 description: Use the tag filters below to narrow sections, or ctrl+f to search
-permalink: /cheatsheet
+permalink: /cheatsheet/
 show_sidebar: true
 toc: true
 searchable: true

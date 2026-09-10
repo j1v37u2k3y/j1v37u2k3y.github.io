@@ -1,5 +1,5 @@
 ---
 layout: allcategories
 title: Categories
-permalink: /categories
+permalink: /categories/
 ---
