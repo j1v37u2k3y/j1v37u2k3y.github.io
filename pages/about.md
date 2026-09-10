@@ -23,6 +23,18 @@ twitter-timeline:
 <div class="about-header">
 <span class="lambda">λ</span> <span class="tilde">\~</span> whoami
 </div>
+
+Offensive security engineer. Self-taught since 2003, starting in a USMC barracks — barracks coder to security
+engineer is the whole arc.
+
+Day to day that's web apps, Active Directory, cloud and containers. Off hours it's building the tooling I wished
+existed, then writing down exactly how it broke — a robot that shouldn't have been on my network, an IP finder that
+phones nobody home, an MCP server that remembers the engagement so I don't have to.
+
+I build before I break. It's hard to take something apart honestly if you've never had to make one stand up.
+
+Facts, not opinions. Three boys watching. I'm still building — are you?
+
 <p>
 <!--[![HackTheBox-Badge](http://www.hackthebox.eu/badge/image/29519)](https://www.hackthebox.eu/profile/29519)-->
 <a href="https://profile.hackthebox.com/profile/019c9faf-ec42-70ed-8efb-5f1afa267019" target="_blank"><img src="https://www.hackthebox.com/badge/image/29519" alt="Hack The Box"></a>
