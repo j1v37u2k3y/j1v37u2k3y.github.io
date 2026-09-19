@@ -53,7 +53,7 @@ Sometimes the granted command is a program that will hand you a shell if you ask
 interpreters all qualify: `less` runs `!/bin/sh`, `vim` has `:!`, `nano` can spawn a command, `awk` and `find` and
 `python` will all execute for you. GTFOBins is just the catalog of which ones and how.
 
-On **[Openadmin](https://www.hackthebox.com/machines/OpenAdmin)**, `sudo -l` showed `nano` runnable as another user. That's a
+On **[Openadmin](https://app.hackthebox.com/machines/OpenAdmin)**, `sudo -l` showed `nano` runnable as another user. That's a
 [GTFOBins](https://gtfobins.github.io/gtfobins/nano/#sudo) one-liner — reset nano, execute a command, done. On
 **[Warzone 2](https://www.vulnhub.com/entry/warzone-2,598/)** (VulnHub) it was `less`. Same idea, different binary.
 
@@ -65,7 +65,7 @@ That's shape one. The other four are where it gets interesting, because almost n
 
 # Shape 2: sudo sideways
 
-Back to that [Bashed](https://www.hackthebox.com/machines/Bashed) line:
+Back to that [Bashed](https://app.hackthebox.com/machines/Bashed) line:
 
 ```
 (scriptmanager : scriptmanager) NOPASSWD: ALL
@@ -78,7 +78,7 @@ sudo -H -u scriptmanager bash -c 'id'
 ```
 
 That's not privilege *escalation* in the vertical sense. It's lateral movement wearing sudo's clothes. And it's easy to
-dismiss as a dead end — until you look at what scriptmanager can do that www-data couldn't. On [Bashed](https://www.hackthebox.com/machines/Bashed), scriptmanager
+dismiss as a dead end — until you look at what scriptmanager can do that www-data couldn't. On [Bashed](https://app.hackthebox.com/machines/Bashed), scriptmanager
 owned a directory of scripts that **root** executed on a timer. So the chain was: www-data → (sudo) → scriptmanager →
 (write a script root will run) → root.
 
@@ -91,7 +91,7 @@ one hop later.
 Here the granted binary isn't a pager or an editor. It's something whose entire job is to **run code you give it** —
 and that's exactly the problem.
 
-On **[Canape](https://www.hackthebox.com/machines/Canape)**, the grant was effectively:
+On **[Canape](https://app.hackthebox.com/machines/Canape)**, the grant was effectively:
 
 ```
 sudo /usr/bin/pip install .
@@ -118,8 +118,8 @@ People see `python3` and reach for GTFOBins. But you weren't granted `python3` �
 specific script you can't edit**. The interpreter is a red herring. The attack surface is the *script*, and specifically
 whatever the script reads that you can influence.
 
-On **[Forge](https://www.hackthebox.com/machines/Forge)**, that script exposed an interactive path — feed it the wrong input and it dropped into a Python prompt of
-its own, which is game over. On **[Busqueda](https://www.hackthebox.com/machines/Busqueda)**, a root-run maintenance script invoked other tools (`git`, `docker`) using
+On **[Forge](https://app.hackthebox.com/machines/Forge)**, that script exposed an interactive path — feed it the wrong input and it dropped into a Python prompt of
+its own, which is game over. On **[Busqueda](https://app.hackthebox.com/machines/Busqueda)**, a root-run maintenance script invoked other tools (`git`, `docker`) using
 **relative** paths and configs sitting in a directory the lower-privileged user could touch. You never modify the
 trusted script. You modify what it trusts: a config file, a `PATH` lookup, a file it parses.
 
@@ -141,7 +141,7 @@ echo 'www-data ALL=NOPASSWD: ALL' >> /etc/sudoers
 ```
 
 Drop that into the file root runs, wait for the timer, and now the misconfiguration exists because I put it there. On
-**[Lightweight](https://www.hackthebox.com/machines/Lightweight)**, the write primitive was more direct — enough access to overwrite `/etc/sudoers` outright, so I built
+**[Lightweight](https://app.hackthebox.com/machines/Lightweight)**, the write primitive was more direct — enough access to overwrite `/etc/sudoers` outright, so I built
 the sudoers file I wanted locally and dropped it over the real one.
 
 This reframes what "a sudo vuln" even means. The sudoers file is just a file. If anything root controls can be coerced
@@ -154,7 +154,7 @@ misconfiguration isn't something you *find*, it's something you *author*. Which 
 The last one is my favorite, because it violates the unspoken assumption behind all sudo tutorials: that you're sitting
 at an interactive shell when you run it.
 
-On **[FluxCapacitor](https://www.hackthebox.com/machines/FluxCapacitor)**, I never got a shell before rooting the box. The whole privesc happened over HTTP. A web endpoint
+On **[FluxCapacitor](https://app.hackthebox.com/machines/FluxCapacitor)**, I never got a shell before rooting the box. The whole privesc happened over HTTP. A web endpoint
 passed a parameter into a command line without sanitizing it, and the web user had a sudo grant for a management binary:
 
 ```
