@@ -159,6 +159,7 @@ renders a preview with a **mock of the TikTok chrome drawn on top** — search b
 column, caption strip — so you can see the clip clears all of it.
 
 <img src="/assets/images/thevarangian/pinned-title-safe-zones.png" alt="A Raid Report frame with a mock of TikTok's UI drawn over it — search bar across the top, the right-hand action-button column, and red dashed lines marking the reserved zones. The pinned 'THE VARANGIAN' title and the caption bands sit inside a centered safe zone that clears both the side buttons and the search bar." />
+
 <small>Background photo: "<a href="https://commons.wikimedia.org/wiki/File:Dragon_Harald_Fairhair_(14647844996).jpg">Dragon Harald Fairhair</a>" by Jack_IOM from Douglas, Isle of Man, licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via Wikimedia Commons; cropped and overlaid with a mock of TikTok's UI.</small>
 
 # What stays deliberately human
