@@ -10,7 +10,7 @@ toc: true
 searchable: true
 ---
 
-There's a TikTok channel called **THE VARANGIAN** that tells Viking-age history as
+There's a TikTok channel called [**THE VARANGIAN**](https://www.tiktok.com/@thevarangianhq) that tells Viking-age history as
 security lessons — one true raid, one lesson in how you'd defend against it. The tagline is
 the whole thesis of authorized offensive security in seven words: **"Hired to break in. Sworn
 to guard."**
@@ -191,7 +191,8 @@ fact-check gate that can kill a story and a publish step that can no longer lie 
 days. The 102K was a good morning. The machine that made it is the point.
 
 If this channel ever drops a clip that reads a little *too* clean — sourced, fact-checked,
-framed as a lesson — now you know what's under the hood.
+framed as a lesson — now you know what's under the hood. Follow along at
+[@thevarangianhq](https://www.tiktok.com/@thevarangianhq) on TikTok.
 
 Hired to break in. Sworn to guard. Let's go to work.
 
