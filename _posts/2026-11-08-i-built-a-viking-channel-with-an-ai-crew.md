@@ -12,7 +12,7 @@ searchable: true
 
 There's a TikTok channel called **THE VARANGIAN** that tells Viking-age history as
 security lessons — one true raid, one lesson in how you'd defend against it. The tagline is
-the whole thesis of authorized offensive security in six words: **"Hired to break in. Sworn
+the whole thesis of authorized offensive security in seven words: **"Hired to break in. Sworn
 to guard."**
 
 I didn't edit a single frame of it. A crew of AI agents built the pipeline that makes the
@@ -58,8 +58,8 @@ A few guardrails are load-bearing, not decoration:
 
 # The crew that builds it
 
-The agents run under an open-source orchestrator I've been building called
-[**Firstmate**](https://github.com/kunchenguid/firstmate): a "first mate" that supervises a
+The agents run under an open-source orchestrator called
+[**Firstmate**](https://github.com/kunchenguid/firstmate) that I run: a "first mate" that supervises a
 persistent producer agent and spins up short-lived task workers under it. The shape is
 deliberately boring and boringly safe:
 
@@ -159,6 +159,7 @@ renders a preview with a **mock of the TikTok chrome drawn on top** — search b
 column, caption strip — so you can see the clip clears all of it.
 
 <img src="/assets/images/thevarangian/pinned-title-safe-zones.png" alt="A Raid Report frame with a mock of TikTok's UI drawn over it — search bar across the top, the right-hand action-button column, and red dashed lines marking the reserved zones. The pinned 'THE VARANGIAN' title and the caption bands sit inside a centered safe zone that clears both the side buttons and the search bar." />
+<small>Background photo: "<a href="https://commons.wikimedia.org/wiki/File:Dragon_Harald_Fairhair_(14647844996).jpg">Dragon Harald Fairhair</a>" by Jack_IOM from Douglas, Isle of Man, licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via Wikimedia Commons; cropped and overlaid with a mock of TikTok's UI.</small>
 
 # What stays deliberately human
 
